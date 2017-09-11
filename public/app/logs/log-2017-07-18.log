@@ -1,0 +1,4 @@
+ERROR - 2017-07-18 13:49:55 --> Severity: Notice --> Use of undefined constant BASE_PATH - assumed 'BASE_PATH' /var/www/public/app/config/config.php 26
+ERROR - 2017-07-18 13:51:46 --> Severity: Notice --> Use of undefined constant BASE_PATH - assumed 'BASE_PATH' /var/www/public/app/config/config.php 26
+ERROR - 2017-07-18 13:52:25 --> Severity: Notice --> Use of undefined constant BASE_PATH - assumed 'BASE_PATH' /var/www/public/app/config/config.php 26
+ERROR - 2017-07-18 14:35:30 --> 404 Page Not Found: Faviconico/index
