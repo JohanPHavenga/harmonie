@@ -1,1 +1,19 @@
 ERROR - 2017-09-11 19:04:13 --> 404 Page Not Found: Faviconico/index
+ERROR - 2017-09-11 19:52:22 --> 404 Page Not Found: Faviconico/index
+ERROR - 2017-09-11 19:57:38 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 96
+ERROR - 2017-09-11 19:57:38 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 102
+ERROR - 2017-09-11 19:57:39 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 96
+ERROR - 2017-09-11 19:57:39 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 102
+ERROR - 2017-09-11 19:57:40 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 96
+ERROR - 2017-09-11 19:57:40 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 102
+ERROR - 2017-09-11 19:57:40 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 96
+ERROR - 2017-09-11 19:57:40 --> Severity: Notice --> Use of undefined constant base_url - assumed 'base_url' /var/www/public/app/views/templates/header.php 102
+ERROR - 2017-09-11 20:07:45 --> 404 Page Not Found: About/index
+ERROR - 2017-09-11 20:08:49 --> 404 Page Not Found: About/index
+ERROR - 2017-09-11 20:08:57 --> 404 Page Not Found: About/index
+ERROR - 2017-09-11 20:08:57 --> 404 Page Not Found: Faviconico/index
+ERROR - 2017-09-11 20:10:10 --> 404 Page Not Found: About/index
+ERROR - 2017-09-11 20:11:28 --> 404 Page Not Found: Listing/index
+ERROR - 2017-09-11 20:19:25 --> 404 Page Not Found: Listing/index
+ERROR - 2017-09-11 20:19:26 --> 404 Page Not Found: Listing/index
+ERROR - 2017-09-11 20:19:27 --> 404 Page Not Found: Listing/index
