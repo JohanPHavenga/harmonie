@@ -20,13 +20,27 @@ class Home extends Frontend_Controller {
 	 */
 	public function index()
 	{
+            $this->data_to_header['active_menu']="home";
+            
             $this->load->view($this->header_url, $this->data_to_header);
             $this->load->view('home', $this->data_to_view);
             $this->load->view($this->footer_url, $this->data_to_footer);
 	}
         
+        public function faq() 
+        {
+            $this->data_to_header['title']="Frequently asked questions";
+            $this->data_to_header['active_menu']="faq";
+            
+            $this->load->view($this->header_url, $this->data_to_header);
+            $this->load->view('faq', $this->data_to_view);
+            $this->load->view($this->footer_url, $this->data_to_footer);
+        }
+        
         public function my_404() 
         {
+            $this->data_to_header['title']="Page not found";
+            
             $this->load->view($this->header_url, $this->data_to_header);
             $this->load->view('404', $this->data_to_view);
             $this->load->view($this->footer_url, $this->data_to_footer);

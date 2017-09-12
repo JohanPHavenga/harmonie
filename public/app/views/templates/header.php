@@ -42,6 +42,7 @@ if (isset($meta_description)) {
         <link rel="stylesheet" href="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/libraries/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/css/theme.css'); ?>" type="text/css" id="color-variant-default">
+        <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>" type="text/css" >
         <link rel="stylesheet" href="#" type="text/css" id="color-variant">
 
         <?php
@@ -133,7 +134,7 @@ if (isset($meta_description)) {
                                 <div class="navigation clearfix-normal">
 
                                     <ul class="nav">
-                                        <li><a href="<?=base_url();?>">Home</a></li>
+                                        <li><a href="<?=base_url();?>" <?php if ($active_menu=="home") { echo "class='active'"; }?>>Home</a></li>
 <!--                                        <li class="menuparent">
                                             <span class="menuparent nolink">Home Alternatives</span>
                                             <ul>
@@ -141,10 +142,10 @@ if (isset($meta_description)) {
                                                 <li><a href="index_2.html">Home with image 2</a></li>
                                             </ul>
                                         </li>-->
-                                        <li><a href="<?=base_url('listing');?>"><b>Holiday Rental Listings</b></a></li>
-                                        <li><a href="<?=base_url('about');?>">About Us</a></li>
-                                        <li><a href="<?=base_url('faq');?>">FAQ</a></li>
-                                        <li><a href="<?=base_url('contact');?>">Contact Us</a></li>
+                                        <li><a href="<?=base_url('listing');?>" <?php if ($active_menu=="listing") { echo "class='active'"; }?>><b>Holiday Rental Listings</b></a></li>
+                                        <li><a href="<?=base_url('about');?>" <?php if ($active_menu=="about") { echo "class='active'"; }?>>About Us</a></li>
+                                        <li><a href="<?=base_url('faq');?>" <?php if ($active_menu=="faq") { echo "class='active'"; }?>>FAQ</a></li>
+                                        <li><a href="<?=base_url('contact');?>" <?php if ($active_menu=="contact") { echo "class='active'"; }?>>Contact Us</a></li>
 
                                     </ul><!-- /.nav -->
 

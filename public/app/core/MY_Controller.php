@@ -24,7 +24,7 @@ class Admin_Controller extends MY_Controller {
 
 class Frontend_Controller extends MY_Controller {
 
-    public $data_to_header=["section"=>""];
+    public $data_to_header=["active_menu"=>""];
     public $data_to_view=[];
     public $data_to_footer=["admin_login"=>"/login/admin"];
 

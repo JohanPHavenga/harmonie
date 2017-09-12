@@ -1,0 +1,12 @@
+ERROR - 2017-09-12 19:57:28 --> Severity: error --> Exception: syntax error, unexpected end of file /var/www/public/app/views/templates/header.php 168
+ERROR - 2017-09-12 19:57:28 --> Severity: error --> Exception: syntax error, unexpected end of file /var/www/public/app/views/templates/header.php 168
+ERROR - 2017-09-12 19:58:53 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 136
+ERROR - 2017-09-12 19:58:53 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 144
+ERROR - 2017-09-12 19:58:53 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 145
+ERROR - 2017-09-12 19:58:53 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 146
+ERROR - 2017-09-12 19:58:53 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 147
+ERROR - 2017-09-12 19:58:54 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 136
+ERROR - 2017-09-12 19:58:54 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 144
+ERROR - 2017-09-12 19:58:54 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 145
+ERROR - 2017-09-12 19:58:54 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 146
+ERROR - 2017-09-12 19:58:54 --> Severity: Notice --> Undefined variable: active_menu /var/www/public/app/views/templates/header.php 147
