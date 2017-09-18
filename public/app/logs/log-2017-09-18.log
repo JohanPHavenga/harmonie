@@ -1,0 +1,13 @@
+ERROR - 2017-09-18 19:39:29 --> Severity: Warning --> Missing argument 1 for Property::index(), called in /var/www/public/syscore/core/CodeIgniter.php on line 532 and defined /var/www/public/app/controllers/Property.php 6
+ERROR - 2017-09-18 19:39:29 --> Severity: Notice --> Undefined variable: property_type /var/www/public/app/controllers/Property.php 8
+ERROR - 2017-09-18 19:39:29 --> Severity: Warning --> Missing argument 1 for Property::index(), called in /var/www/public/syscore/core/CodeIgniter.php on line 532 and defined /var/www/public/app/controllers/Property.php 6
+ERROR - 2017-09-18 19:39:29 --> Severity: Notice --> Undefined variable: property_type /var/www/public/app/controllers/Property.php 8
+ERROR - 2017-09-18 19:40:22 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:22 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:40:25 --> Severity: 8192 --> Methods with the same name as their class will not be constructors in a future version of PHP; Property has a deprecated constructor /var/www/public/app/controllers/Property.php 4
+ERROR - 2017-09-18 19:41:24 --> Severity: error --> Exception: Call to undefined method Property::detail() /var/www/public/app/controllers/Property.php 15

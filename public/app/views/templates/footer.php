@@ -16,7 +16,7 @@
                         <div class="property">
                             <div class="image">
                                 <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-1.png" alt="">
+                                <img src="<?= base_url();?>assets/img/tmp/property-small-1.png" alt="">
                             </div><!-- /.image -->
                             <div class="wrapper">
                                 <div class="title">
@@ -32,7 +32,7 @@
                         <div class="property">
                             <div class="image">
                                 <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-2.png" alt="">
+                                <img src="<?= base_url();?>assets/img/tmp/property-small-2.png" alt="">
                             </div><!-- /.image -->
                             <div class="wrapper">
                                 <div class="title">
@@ -48,7 +48,7 @@
                         <div class="property">
                             <div class="image">
                                 <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-3.png" alt="">
+                                <img src="<?= base_url();?>assets/img/tmp/property-small-3.png" alt="">
                             </div><!-- /.image -->
                             <div class="wrapper">
                                 <div class="title">
@@ -85,7 +85,7 @@
                                 </tr>
                                 <tr>
                                     <th class="gps">GPS:</th>
-                                    <td>-34.418073, 19.235384</td>
+                                    <td><a href="https://www.google.co.za/maps/search/-34.418073,+19.235384?sa=X&ved=0ahUKEwje49-8uq_WAhUoI8AKHVRGDUgQ8gEIIzAA" target="_blank">-34.418073, 19.235384</a></td>
                                 </tr>
                             </tbody>
                         </table>

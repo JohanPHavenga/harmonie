@@ -6,19 +6,19 @@
             <div class="row">
                 <div class="content">
                     <div class="member span4">
-                        <img src="assets/img/photos/john-doe-original.png" alt="Ilanda Havenga">
+                        <img src="<?= base_url(); ?>assets/img/photos/john-doe-original.png" alt="Ilanda Havenga">
                         <h2>Ilanda Havenga</h2>
                         <p>Co-Owner</p>
                     </div><!-- /.member -->
 
                     <div class="member span4">
-                        <img src="assets/img/photos/emma-hearth-original.png" alt="Emma Hearth">
+                        <img src="<?= base_url(); ?>assets/img/photos/emma-hearth-original.png" alt="Emma Hearth">
                         <h2>Juan Greeff</h2>
                         <p>Co-Owner</p>
                     </div><!-- /.member -->
 
                     <div class="member span4">
-                        <img src="assets/img/photos/angie-blair-original.png" alt="Angie Blair">
+                        <img src="<?= base_url(); ?>assets/img/photos/angie-blair-original.png" alt="Angie Blair">
                         <h2>Brindie en haar Van</h2>
                         <p>Mense rondry</p>
                     </div><!-- /.member -->
@@ -33,7 +33,7 @@
                 <p>Morbi rhoncus, nisi eget molestie gravida, nunc turpis porttitor tortor, id sagittis eros magna sed arcu. In hac habitasse platea dictumst. Integer placerat gravida orci, in gravida massa dapibus nec. Nam commodo rhoncus urna, et imperdiet odio lacinia sodales. Morbi accumsan aliquet metus, ac malesuada quam rutrum et. Curabitur porttitor tincidunt lorem, id mollis dui fringilla sit amet. Mauris vitae risus nunc. Nunc pulvinar varius magna, sed scelerisque arcu varius vitae.</p>
                 <p>Donec lobortis tincidunt justo et rhoncus. Etiam ac ligula a diam consectetur commodo vitae non ipsum. Etiam viverra leo at nunc sollicitudin hendrerit. Sed feugiat massa ac nisl dictum tempus sed quis nulla. Vivamus aliquam venenatis porta.<br>
                     Quisque eget velit dictum orci luctus lacinia. Donec eget augue non sem</p>
-                <p><a href="/contact" class="btn btn-primary">Contact us</a>
+                <p><a href="<?= base_url(); ?>contact" class="btn btn-primary">Contact us</a>
                 </p>
             </div>
             <div class="span1"></div>

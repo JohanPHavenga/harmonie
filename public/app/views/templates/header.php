@@ -10,7 +10,6 @@ if (isset($meta_description)) {
     $descrip = "We offer personalized service in booking and managing properties";
 }
 ?>
-
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -25,13 +24,13 @@ if (isset($meta_description)) {
         <meta content="<?= $descrip; ?>" name="description" />
         <meta content="Johan Havenga" name="author" />
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
 
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-        <link rel="manifest" href="assets/favicons/manifest.json">
-        <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="apple-touch-icon" sizes="152x152" href="<?=base_url('assets/favicons/apple-touch-icon.png');?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url('assets/favicons/favicon-32x32.png')?>">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('assets/favicons/favicon-16x16.png');?>">
+        <link rel="manifest" href="<?=base_url('assets/favicons/manifest.json');?>">
+        <link rel="mask-icon" href="<?=base_url('assets/favicons/safari-pinned-tab.svg');?>" color="#5bbad5">
         <meta name="apple-mobile-web-app-title" content="Harmonie Properties">
         <meta name="application-name" content="Harmonie Properties">
         <meta name="theme-color" content="#ffffff">
@@ -42,7 +41,7 @@ if (isset($meta_description)) {
         <link rel="stylesheet" href="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/libraries/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/css/theme.css'); ?>" type="text/css" id="color-variant-default">
-        <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>" type="text/css" >
+        <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>" type="text/css" >        
         <link rel="stylesheet" href="#" type="text/css" id="color-variant">
 
         <?php
@@ -95,7 +94,7 @@ if (isset($meta_description)) {
 
                                                     <div class="logo">
                                                         <a href="<?=base_url();?>" title="Home">
-                                                            <img src="assets/img/harmonie_logo_44.png" alt="Home">
+                                                            <img src="<?=base_url();?>assets/img/harmonie_logo_44.png" alt="Home">
                                                         </a>
                                                     </div><!-- /.logo -->
 
@@ -118,7 +117,7 @@ if (isset($meta_description)) {
                                                     </div><!-- /.site-phone -->
                                                 </div><!-- /.info -->
 
-                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="">List your property</a>
+                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="<?=base_url();?>property/list-my-property">List your property</a>
                                             </div><!-- /.row -->
                                         </div><!-- /.navbar-inner -->
                                     </div><!-- /.navbar -->
@@ -142,7 +141,19 @@ if (isset($meta_description)) {
                                                 <li><a href="index_2.html">Home with image 2</a></li>
                                             </ul>
                                         </li>-->
-                                        <li><a href="<?=base_url('listing');?>" <?php if ($active_menu=="listing") { echo "class='active'"; }?>><b>Holiday Rental Listings</b></a></li>
+                                        <!--<li><a href="<?=base_url('listing');?>" <?php if ($active_menu=="listing") { echo "class='active'"; }?>><b>Holiday Rental Listings</b></a></li>-->
+
+                                         <li class="menuparent">
+                                             <span class="menuparent nolink <?php if ($active_menu=="property") { echo "active"; }?>"><b>Holiday Rental Listings</b></span>
+                                            <ul>
+                                                <li><a href="<?=base_url('property/all');?>">View all properties</a></li>
+                                                <li><a href="<?=base_url('property/seafront');?>">Sea front properties</a></li>
+                                                <li><a href="<?=base_url('property/houses');?>">Houses to let</a></li>
+                                                <li><a href="<?=base_url('property/apartments');?>">Apartments to let</a></li>
+                                                <li><a href="<?=base_url('property/list-my-property');?>">List your property</a></li>
+                                            </ul>
+                                        </li>
+                                        </li>
                                         <li><a href="<?=base_url('about');?>" <?php if ($active_menu=="about") { echo "class='active'"; }?>>About Us</a></li>
                                         <li><a href="<?=base_url('faq');?>" <?php if ($active_menu=="faq") { echo "class='active'"; }?>>FAQ</a></li>
                                         <li><a href="<?=base_url('contact');?>" <?php if ($active_menu=="contact") { echo "class='active'"; }?>>Contact Us</a></li>
@@ -150,12 +161,16 @@ if (isset($meta_description)) {
                                     </ul><!-- /.nav -->
 
 
-                                    <form method="get" class="site-search" action="?">
+                                    <?php 
+                                        echo form_open(base_url('property/search'), array(
+                                            'class' => 'site-search'
+                                            ));?>
+                                    <!--<form method="post" class="site-search" action="<?= base_url('property/search'); ?>">-->
                                         <div class="input-append">
-                                            <input title="Enter the terms you wish to search for." class="search-query span2 form-text" placeholder="Search" type="text" name="">
+                                            <input title="Enter the terms you wish to search for." class="search-query span2 form-text" placeholder="Search" type="text" name="ss">
                                             <button type="submit" class="btn"><i class="icon-search"></i></button>
                                         </div><!-- /.input-append -->
-                                    </form><!-- /.site-search -->
+                                    <?php echo form_close();?>
                                 </div><!-- /.navigation -->
                             </div><!-- /.navigation-wrapper -->
                         </div><!-- /.container -->

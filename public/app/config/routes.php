@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['faq'] = 'home/faq';
+$route['about'] = 'home/about';
