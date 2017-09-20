@@ -1,0 +1,15 @@
+ERROR - 2017-09-20 19:26:14 --> Severity: error --> Exception: syntax error, unexpected 'alt' (T_STRING), expecting ',' or ')' /var/www/public/app/views/detail.php 212
+ERROR - 2017-09-20 19:49:04 --> Severity: Notice --> Undefined property: Home::$footer_url /var/www/public/app/controllers/Home.php 27
+ERROR - 2017-09-20 19:49:04 --> Severity: Notice --> Undefined property: Home::$footer_url /var/www/public/app/controllers/Home.php 56
+ERROR - 2017-09-20 19:53:11 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:11 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:12 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:12 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:30 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:30 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:31 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:31 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:32 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:32 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:32 --> Severity: Notice --> Undefined variable: data_to_footer /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-20 19:53:32 --> Severity: error --> Exception: Cannot access empty property /var/www/public/app/core/MY_Controller.php 40

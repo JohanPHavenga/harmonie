@@ -51,4 +51,16 @@ class Property extends Frontend_Controller {
         $this->load->view('search', $this->data_to_view);
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
+    
+    public function detail($prop_code)
+    {            
+        $this->data_to_header['title']="Detail";
+        $this->data_to_header['active_menu']="property";
+        
+        $this->data_to_view['prop_code']=$prop_code;
+
+        $this->load->view($this->header_url, $this->data_to_header);
+        $this->load->view('detail', $this->data_to_view);
+        $this->load->view($this->footer_url, $this->data_to_footer);
+    }
 }

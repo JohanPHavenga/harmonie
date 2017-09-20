@@ -32,5 +32,12 @@ class Frontend_Controller extends MY_Controller {
     public $footer_url='templates/footer';
 
     public $crumbs_arr=[];
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', NULL, TRUE);
+        $this->data_to_footer['latest_prop'] = $this->load->view('templates/latest_prop', NULL, TRUE);
+    }
     
 }

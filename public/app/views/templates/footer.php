@@ -8,59 +8,7 @@
         <div id="footer-top-inner" class="container">
             <div class="row">
                 <div class="widget properties span3">
-                    <div class="title">
-                        <h2>Most Recent</h2>
-                    </div><!-- /.title -->
-
-                    <div class="content">
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="<?= base_url();?>assets/img/tmp/property-small-1.png" alt="">
-                            </div><!-- /.image -->
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="<?= base_url();?>assets/img/tmp/property-small-2.png" alt="">
-                            </div><!-- /.image -->
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="<?= base_url();?>assets/img/tmp/property-small-3.png" alt="">
-                            </div><!-- /.image -->
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-                    </div><!-- /.content -->
+                    <?=$latest_prop;?>
                 </div><!-- /.properties-small -->
 
                 <div class="widget span3">

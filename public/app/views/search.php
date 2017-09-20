@@ -3,7 +3,7 @@
     <div id="main">
         <div class="row">
             <div class="span12">
-                <h1 class="page-header">Search | <?= $this->input->post('ss'); ?></h1>
+                <h1 class="page-header">Search for <span style="background-color: yellow"><?= $this->input->post('ss'); ?></span></h1>
 
                 <div class="properties-grid">
                     <div class="row">
