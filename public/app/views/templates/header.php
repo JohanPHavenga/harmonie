@@ -113,7 +113,7 @@ if (isset($meta_description)) {
                                                     </div><!-- /.site-email -->
 
                                                     <div class="site-phone">
-                                                        <span>071 505 9201</span>
+                                                        <span>+27 (0)71 505 9201</span>
                                                     </div><!-- /.site-phone -->
                                                 </div><!-- /.info -->
 
@@ -147,7 +147,6 @@ if (isset($meta_description)) {
                                              <span class="menuparent nolink <?php if ($active_menu=="property") { echo "active"; }?>"><b>Holiday Rental Listings</b></span>
                                             <ul>
                                                 <li><a href="<?=base_url('property/all');?>">View all properties</a></li>
-                                                <li><a href="<?=base_url('property/seafront');?>">Sea front properties</a></li>
                                                 <li><a href="<?=base_url('property/houses');?>">Houses to let</a></li>
                                                 <li><a href="<?=base_url('property/apartments');?>">Apartments to let</a></li>
                                                 <li><a href="<?=base_url('property/list-my-property');?>">List your property</a></li>

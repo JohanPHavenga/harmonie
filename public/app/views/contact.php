@@ -31,7 +31,7 @@
                 </div>
 
                 <h2>We'd love to hear from you. Say us hello!</h2>
-
+                
                 <form method="post" class="contact-form" action="?">
                     <div class="name control-group">
                         <label class="control-label" for="inputContactName">
@@ -72,79 +72,7 @@
 
             <div class="sidebar span3">
                 <div class="widget properties last">
-                    <div class="title">
-                        <h2>Latest Properties</h2>
-                    </div><!-- /.title -->
-
-                    <div class="content">
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-4.png" alt="">
-                            </div><!-- /.image -->
-
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-5.png" alt="">
-                            </div><!-- /.image -->
-
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-6.png" alt="">
-                            </div><!-- /.image -->
-
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-
-                        <div class="property">
-                            <div class="image">
-                                <a href="detail.html"></a>
-                                <img src="assets/img/tmp/property-small-2.png" alt="">
-                            </div><!-- /.image -->
-
-                            <div class="wrapper">
-                                <div class="title">
-                                    <h3>
-                                        <a href="detail.html">160 10th Street</a>
-                                    </h3>
-                                </div><!-- /.title -->
-                                <div class="location">Hermanus</div><!-- /.location -->
-                                <div class="price">R 2 100</div><!-- /.price -->
-                            </div><!-- /.wrapper -->
-                        </div><!-- /.property -->
-                    </div><!-- /.content -->
+                    <?=$latest_prop;?>
                 </div><!-- /.properties -->
 
             </div>

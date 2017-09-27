@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-active_group = DB_LOCATION;
+$active_group = DB_LOCATION;
 $query_builder = TRUE;
 
 $db['local'] = array(
@@ -97,7 +97,7 @@ $db['local'] = array(
 
 $db['server'] = array(
 	'dsn'	=> '',
-  'hostname' => 'localhost',
+        'hostname' => 'localhost',
 	'username' => 'roadrjsx_coyote',
 	'password' => 'gSX$Esn-z3;$',
 	'database' => 'roadrjsx_coyote',

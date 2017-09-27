@@ -36,8 +36,17 @@ class Frontend_Controller extends MY_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', NULL, TRUE);
-        $this->data_to_footer['latest_prop'] = $this->load->view('templates/latest_prop', NULL, TRUE);
+        
+        $this->load->model('property_model');
+        
+        $lp_params['count']=3;
+        $cf_params=[];
+        $this->data_to_footer['latest_prop'] = $this->load->view('templates/latest_prop', $lp_params, TRUE);
+        $this->data_to_footer['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
+        
+        
     }
+    
+   
     
 }

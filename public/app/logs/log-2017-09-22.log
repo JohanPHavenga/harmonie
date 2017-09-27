@@ -1,0 +1,19 @@
+ERROR - 2017-09-22 19:21:02 --> Severity: Notice --> Undefined variable: lp_params /var/www/public/app/core/MY_Controller.php 39
+ERROR - 2017-09-22 19:21:02 --> Severity: Notice --> Undefined variable: lp_params /var/www/public/app/core/MY_Controller.php 39
+ERROR - 2017-09-22 19:21:03 --> Severity: Notice --> Undefined variable: lp_params /var/www/public/app/core/MY_Controller.php 39
+ERROR - 2017-09-22 19:30:35 --> Severity: Notice --> Undefined variable: latest_prop /var/www/public/app/views/contact.php 75
+ERROR - 2017-09-22 19:30:35 --> Severity: Notice --> Undefined variable: latest_prop /var/www/public/app/views/contact.php 75
+ERROR - 2017-09-22 19:32:38 --> Severity: Notice --> Undefined variable: count /var/www/public/app/views/templates/latest_prop.php 58
+ERROR - 2017-09-22 19:32:38 --> Severity: Notice --> Undefined variable: count /var/www/public/app/views/templates/latest_prop.php 58
+ERROR - 2017-09-22 19:33:08 --> Severity: error --> Exception: Cannot use [] for reading /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-22 19:33:08 --> Severity: error --> Exception: Cannot use [] for reading /var/www/public/app/core/MY_Controller.php 40
+ERROR - 2017-09-22 19:33:35 --> Severity: Notice --> Undefined variable: latest_prop /var/www/public/app/views/detail.php 204
+ERROR - 2017-09-22 19:33:36 --> Severity: Notice --> Undefined variable: latest_prop /var/www/public/app/views/detail.php 204
+ERROR - 2017-09-22 19:35:42 --> Severity: Notice --> Undefined variable: contact_form /var/www/public/app/views/detail.php 160
+ERROR - 2017-09-22 19:35:43 --> Severity: Notice --> Undefined variable: contact_form /var/www/public/app/views/detail.php 160
+ERROR - 2017-09-22 19:45:01 --> Severity: error --> Exception: /var/www/public/app/models/Property_model.php exists, but doesn't declare class Property_model /var/www/public/syscore/core/Loader.php 336
+ERROR - 2017-09-22 19:45:01 --> Severity: error --> Exception: /var/www/public/app/models/Property_model.php exists, but doesn't declare class Property_model /var/www/public/syscore/core/Loader.php 336
+ERROR - 2017-09-22 19:45:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1049): Unknown database 'harmonie' /var/www/public/syscore/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2017-09-22 19:45:37 --> Unable to connect to the database
+ERROR - 2017-09-22 19:45:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1049): Unknown database 'harmonie' /var/www/public/syscore/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2017-09-22 19:45:37 --> Unable to connect to the database

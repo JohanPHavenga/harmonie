@@ -6,7 +6,7 @@
     <div class="property">
         <div class="image">
             <a href="detail.html"></a>
-            <img src="assets/img/tmp/property-small-4.png" alt="">
+            <img src="<?= base_url("assets/img/tmp/property-small-4.png");?>" alt="">
         </div><!-- /.image -->
 
         <div class="wrapper">
@@ -23,7 +23,7 @@
     <div class="property">
         <div class="image">
             <a href="detail.html"></a>
-            <img src="assets/img/tmp/property-small-5.png" alt="">
+            <img src="<?= base_url("assets/img/tmp/property-small-5.png");?>" alt="">
         </div><!-- /.image -->
 
         <div class="wrapper">
@@ -40,7 +40,7 @@
     <div class="property">
         <div class="image">
             <a href="detail.html"></a>
-            <img src="assets/img/tmp/property-small-6.png" alt="">
+            <img src="<?= base_url("assets/img/tmp/property-small-6.png");?>" alt="">
         </div><!-- /.image -->
 
         <div class="wrapper">
@@ -53,11 +53,15 @@
             <div class="price">R 2 100</div><!-- /.price -->
         </div><!-- /.wrapper -->
     </div><!-- /.property -->
+    
+    <?php
+        if ($count!=3) {
+    ?>
 
     <div class="property">
         <div class="image">
             <a href="detail.html"></a>
-            <img src="assets/img/tmp/property-small-2.png" alt="">
+            <img src="<?= base_url("assets/img/tmp/property-small-2.png");?>" alt="">
         </div><!-- /.image -->
 
         <div class="wrapper">
@@ -70,4 +74,8 @@
             <div class="price">R 2 100</div><!-- /.price -->
         </div><!-- /.wrapper -->
     </div><!-- /.property -->
+    
+    <?php
+        }
+    ?>
 </div><!-- /.content -->

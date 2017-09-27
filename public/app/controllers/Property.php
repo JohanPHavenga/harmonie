@@ -55,7 +55,12 @@ class Property extends Frontend_Controller {
     public function detail($prop_code)
     {            
         $this->data_to_header['title']="Detail";
-        $this->data_to_header['active_menu']="property";
+        $this->data_to_header['active_menu']="property";        
+        
+        $lp_params['count']=4;
+        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_params, TRUE);
+        $cf_params=[];
+        $this->data_to_view['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
         
         $this->data_to_view['prop_code']=$prop_code;
 
