@@ -25,7 +25,7 @@
                                 </tr>
                                 <tr>
                                     <th class="phone">Phone:</th>
-                                    <td>+27 71 505 9201</td>
+                                    <td>+27 (0)71 505 9201</td>
                                 </tr>
                                 <tr>
                                     <th class="email">E-mail:</th>

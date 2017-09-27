@@ -19,7 +19,7 @@
                     <div class="span3">
                         <h3 class="call-us">Call us</h3>
                         <p class="content-icon-spacing">
-                            +27 71 505 9201
+                            +27 (0)71 505 9201
                         </p>
                     </div>
                     <div class="span3">

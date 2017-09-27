@@ -1,5 +1,5 @@
 <div class="title">
-    <h2 class="block-title">Contact Us</h2>
+    <h2 class="block-title">Enquiry</h2>
 </div><!-- /.title -->
 
 <div class="content">
@@ -21,6 +21,36 @@
             </label>
             <div class="controls">
                 <input type="text" id="inputEmail">
+            </div><!-- /.controls -->
+        </div><!-- /.control-group -->
+        
+        <div class="control-group">
+            <label class="control-label" for="inputName">
+                Number of guests
+                <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <div class="controls">
+                <input type="number" id="inputName">
+            </div><!-- /.controls -->
+        </div><!-- /.control-group -->
+        
+        <div class="control-group">
+            <label class="control-label" for="inputName">
+                Date from
+                <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <div class="controls">
+                <input type="date" id="inputName">
+            </div><!-- /.controls -->
+        </div><!-- /.control-group -->
+        
+        <div class="control-group">
+            <label class="control-label" for="inputName">
+                Date to
+                <span class="form-required" title="This field is required.">*</span>
+            </label>
+            <div class="controls">
+                <input type="date" id="inputName">
             </div><!-- /.controls -->
         </div><!-- /.control-group -->
 

@@ -2320,10 +2320,41 @@ iframe.map {
     bottom: 15px
 }
 
-.properties-grid .property .area {
+.properties-grid .property .from {
+    background-color: #313131;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 16px;
+    position: absolute;
+    left: 15px;
+    bottom: 15px
+}
+
+.properties-grid .property .price2 {
+    background-color: #fff;
     color: #313131;
+    font-size: 18px;
+    padding: 5px 16px;
+    position: absolute;
+    left: 85px;
+    bottom: 15px
+}
+
+.properties-grid .property .property-footer {
+   background: #022a3b;
+   height: 33px;
+   margin-top: 10px;
+}
+
+.properties-grid .property .property-footer.take2 {
+    background: #999;
+}
+
+.properties-grid .property .area {
+    /*color: #313131;*/
+    color: #fff;
     float: left;
-    margin-top: 8px
+    margin-top: 6px
 }
 
 .properties-grid .property .area .key {
@@ -2339,7 +2370,7 @@ iframe.map {
 .properties-grid .property .bedrooms {
     float: right;
     margin-right: 10px;
-    padding-top: 8px
+    padding-top: 6px
 }
 
 .properties-grid .property .bedrooms .content {
@@ -2347,7 +2378,8 @@ iframe.map {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 21px 12px;
-    color: #313131;
+    /*color: #313131;*/
+    color: #fff;
     padding-left: 30px
 }
 
@@ -2361,7 +2393,7 @@ iframe.map {
 .properties-grid .property .bathrooms {
     float: right;
     margin-right: 15px;
-    padding-top: 8px
+    padding-top: 6px
 }
 
 .properties-grid .property .bathrooms .content {
@@ -2369,7 +2401,8 @@ iframe.map {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 14px 20px;
-    color: #313131;
+    /*color: #313131;*/
+    color: #fff;
     padding-left: 25px
 }
 

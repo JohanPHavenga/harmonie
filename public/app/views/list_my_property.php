@@ -139,9 +139,9 @@
                             </div><!-- /.span4 -->
 
                             <div class="span4">
-                                <h3><strong>3.</strong> <span>Image upload</span></h3>
+                                <h3><strong>3.</strong> <span>Notes</span></h3>
 
-                                <div class="fileupload fileupload-new control-group" data-provides="fileupload">
+<!--                                <div class="fileupload fileupload-new control-group" data-provides="fileupload">
                                     <label class="control-label" for="inputPropertyPrice">
                                         Image files
                                     </label>
@@ -157,8 +157,8 @@
                                             <input type="file" />
                                         </span>
                                         <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                    </div><!-- /.input-append -->
-                                </div><!-- .fileupload -->
+                                    </div> /.input-append 
+                                </div> .fileupload -->
 
                                 <div class="control-group">
                                     <label class="control-label" for="inputPropertyNotes">

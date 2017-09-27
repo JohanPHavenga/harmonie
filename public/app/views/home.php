@@ -14,19 +14,22 @@
                                 </div><!-- /.content -->
 
                                 <div class="price">R 1 800</div><!-- /.price -->
+                                <div class="reduced">From </div><!-- /.reduced -->
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">16 4th Street</a></h2>
+                                <h2><a href="detail.html">V23</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Voëlklip, Hermanus</div><!-- /.location -->
+                            <div class="property-footer">
                             <div class="area">
                                 <span class="key">Sleeps:</span><!-- /.key -->
                                 <span class="value">10</span><!-- /.value -->
                             </div><!-- /.area -->
                             <div class="bedrooms"><div class="content">5</div></div><!-- /.bedrooms -->
                             <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
 
                         <div class="property span3">
@@ -35,21 +38,22 @@
                                     <a href="detail.html"></a>
                                     <img src="assets/img/tmp/property-small-2.png" alt="">
                                 </div><!-- /.content -->
-                                <div class="price">R 1 800</div><!-- /.price -->
-                                <div class="reduced">Special Offer </div><!-- /.reduced -->
+                                <div class="price">from R 1 800</div><!-- /.price -->
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">163 Main Road</a></h2>
+                                <h2><a href="detail.html">H3</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Kwaaiwater, Hermanus</div><!-- /.location -->
+                            <div class="property-footer">
                             <div class="area">
                                 <span class="key">Sleeps:</span><!-- /.key -->
                                 <span class="value">8</span><!-- /.value -->
                             </div><!-- /.area -->
                             <div class="bedrooms"><div class="content">4</div></div><!-- /.bedrooms -->
                             <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
 
                         <div class="property span3">
@@ -59,21 +63,23 @@
                                     <img src="assets/img/tmp/property-small-3.png" alt="">
                                 </div><!-- /.content -->
 
-                                <div class="price">R 2 400</div><!-- /.price -->
-                                <div class="reduced">Special Offer </div><!-- /.reduced -->
+                                <div class="price2">R 2 400</div><!-- /.price -->
+                                <div class="from">from </div><!-- /.reduced -->
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">20 Piet Retief</a></h2>
+                                <h2><a href="detail.html">S22</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Sandbaai, Hermanus</div><!-- /.location -->
+                            <div class="property-footer">
                             <div class="area">
                                 <span class="key">Sleeps:</span><!-- /.key -->
                                 <span class="value">6</span><!-- /.value -->
                             </div><!-- /.area -->
                             <div class="bedrooms"><div class="content">2</div></div><!-- /.bedrooms -->
                             <div class="bathrooms"><div class="content">1</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
 
                         <div class="property span3">
@@ -82,20 +88,22 @@
                                     <a href="detail.html"></a>
                                     <img src="assets/img/tmp/property-small-4.png" alt="">
                                 </div><!-- /.content -->
-                                <div class="price">R 1 200</div><!-- /.price -->
+                                <div class="reduced">from R 1 200</div><!-- /.reduced -->
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">30 Duiker Street</a></h2>
+                                <h2><a href="detail.html">NC34</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Northcliff, Hermanus</div><!-- /.location -->
+                            <div class="property-footer">
                             <div class="area">
                                 <span class="key">Sleeps:</span><!-- /.key -->
                                 <span class="value">8</span><!-- /.value -->
                             </div><!-- /.area -->
                             <div class="bedrooms"><div class="content">3</div></div><!-- /.bedrooms -->
                             <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
 
                         <div class="property span3">
@@ -109,16 +117,18 @@
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">110 10th Street</a></h2>
+                                <h2><a href="detail.html">V12</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Voëlklip, Hermanus</div><!-- /.location -->
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">10</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">5</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">4</div></div><!-- /.bathrooms -->
+                            <div class="property-footer">
+                                <div class="area">
+                                    <span class="key">Sleeps:</span><!-- /.key -->
+                                    <span class="value">10</span><!-- /.value -->
+                                </div><!-- /.area -->
+                                <div class="bedrooms"><div class="content">5</div></div><!-- /.bedrooms -->
+                                <div class="bathrooms"><div class="content">4</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
 
                         <div class="property span3">
@@ -128,21 +138,23 @@
                                     <img src="assets/img/tmp/property-small-6.png" alt="">
                                 </div><!-- /.content -->
 
-                                <div class="price">R 9 200</div><!-- /.price -->
-                                <div class="reduced">Special Offer </div><!-- /.reduced -->
+                                <div class="price2">R 19 200</div><!-- /.price -->
+                                <div class="from">from </div><!-- /.reduced -->
                             </div><!-- /.image -->
 
                             <div class="title">
-                                <h2><a href="detail.html">20 Mason Street</a></h2>
+                                <h2><a href="detail.html">E30</a></h2>
                             </div><!-- /.title -->
 
                             <div class="location">Eastcliff, Hermanus</div><!-- /.location -->
+                            <div class="property-footer">
                             <div class="area">
                                 <span class="key">Sleeps:</span><!-- /.key -->
                                 <span class="value">12</span><!-- /.value -->
                             </div><!-- /.area -->
                             <div class="bedrooms"><div class="content">6</div></div><!-- /.bedrooms -->
                             <div class="bathrooms"><div class="content">4</div></div><!-- /.bathrooms -->
+                            </div>
                         </div><!-- /.property -->
                     </div><!-- /.row -->
                 </div><!-- /.properties-grid -->
@@ -444,16 +456,11 @@
 <div class="bottom-wrapper">
     <div class="bottom container">
         <div class="bottom-inner row">
-            <div class="item span4">
-                <div class="address decoration"></div>
-                <h2><a>List your property</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
-                <a href="#" class="btn btn-primary">List Property</a>
-            </div><!-- /.item -->
+            
 
             <div class="item span4">
                 <div class="gps decoration"></div>
-                <h2><a>Advertise rentals</a></h2>
+                <h2><a>Property rentals</a></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
                 <a href="#" class="btn btn-primary">Read more</a>
             </div><!-- /.item -->
@@ -463,6 +470,13 @@
                 <h2><a>Property Management</a></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
                 <a href="#" class="btn btn-primary">Read more</a>
+            </div><!-- /.item -->
+            
+            <div class="item span4">
+                <div class="address decoration"></div>
+                <h2><a>List your property</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
+                <a href="#" class="btn btn-primary">List Property</a>
             </div><!-- /.item -->
         </div><!-- /.bottom-inner -->
     </div><!-- /.bottom -->

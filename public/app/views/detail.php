@@ -2,7 +2,7 @@
     <div id="main">
         <div class="row">
             <div class="span9">
-                <h1 class="page-header">16 4th Street</h1>
+                <h1 class="page-header">V23 - Voëlklip</h1>
 
                 <div class="carousel property">
                     <div class="preview">
@@ -54,11 +54,15 @@
                                         <th>10</th>
                                     </tr>
                                     <tr>
-                                        <td>PRICE FROM</td>
+                                        <td>LOW SEASON PRICE:</td>
                                         <th>R 1 800</th>
                                     </tr>
                                     <tr>
-                                        <td>PRICE TO:</td>
+                                        <td>MID SEASON PRICE:</td>
+                                        <th>R 2 400</th>
+                                    </tr>
+                                    <tr>
+                                        <td>HIGH SEASON PRICE:</td>
                                         <th>R 3 500</th>
                                     </tr>
                                     <tr>
