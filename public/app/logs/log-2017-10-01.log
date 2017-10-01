@@ -1,0 +1,2 @@
+ERROR - 2017-10-01 20:09:50 --> Severity: error --> Exception: Unable to locate the model you have specified: User_model /var/www/public/syscore/core/Loader.php 344
+ERROR - 2017-10-01 20:25:39 --> Severity: error --> Exception: Call to undefined method Login::render_topbar_html() /var/www/public/app/controllers/Login.php 98

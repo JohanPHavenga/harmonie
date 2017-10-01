@@ -50,6 +50,7 @@ class Home extends Frontend_Controller {
             $this->load->view($this->footer_url, $this->data_to_footer);
         }
         
+        
         public function my_404() 
         {
             $this->data_to_header['title']="Page not found";

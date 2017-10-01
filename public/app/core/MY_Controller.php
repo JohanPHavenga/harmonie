@@ -19,6 +19,30 @@ class MY_Controller extends CI_Controller {
  *
  */
 class Admin_Controller extends MY_Controller {
+    
+    public $data_to_header=[];
+    public $data_to_view=[];
+    public $data_to_footer=[];
+
+    public $view_url="/admin/list";
+    public $header_url="/templates/admin/header";
+    public $footer_url="/templates/admin/footer";
+    public $logout_url="/login/logout";
+    public $upload_path="./uploads/admin/";
+    
+    function __construct()
+    {
+        parent::__construct();
+        // Check login, load back end dependencies
+        if (!$this->session->has_userdata('admin_logged_in'))
+        {
+            $this->session->set_flashdata([
+                    'alert'=>"You are not logged in as an Admin. Please log in to continue.",
+                    'status'=>"danger",
+                    ]);
+            redirect('/login/admin', 'refresh');
+        }
+    }
 
 }
 

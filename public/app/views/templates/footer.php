@@ -66,7 +66,7 @@
         <div id="footer-inner">
             <div class="row">
                 <div class="span6 copyright">
-                    <p>© Copyright <?= date("Y");?> by <a href="<?=base_url();?>">Harmonie Property Services</a>. All rights reserved.</p>
+                    <p>© Copyright <?= date("Y");?> by <a href="<?=base_url();?>">Harmonie Property Services</a>. All rights reserved. <br><a href="<?=base_url("login/admin");?>">Admin Login</a></p>
                 </div><!-- /.copyright -->
 
                 <div class="span6 share">
