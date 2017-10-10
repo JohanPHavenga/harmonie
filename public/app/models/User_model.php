@@ -119,10 +119,10 @@ class User_model extends CI_Model {
     }
 
 
-    public function check_login($login_type="user")
+    public function check_login()
     {
         $user_data = array(
-                    'user_username' => $this->input->post('user_email'),
+                    'user_username' => $this->input->post('user_username'),
                     'user_password' => $this->hash_pass($this->input->post('user_password')),
                 );
 

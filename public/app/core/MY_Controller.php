@@ -37,11 +37,63 @@ class Admin_Controller extends MY_Controller {
         if (!$this->session->has_userdata('admin_logged_in'))
         {
             $this->session->set_flashdata([
-                    'alert'=>"You are not logged in as an Admin. Please log in to continue.",
+                    'alert'=>"You are not logged in. Please log in to continue.",
                     'status'=>"danger",
                     ]);
             redirect('/login/admin', 'refresh');
         }
+        
+        $this->data_to_header['menu_array']=$this->set_admin_menu_array();
+
+    }
+    
+    function set_admin_menu_array() {
+        return [
+            // Dashboard
+            [
+                "text"=>"Dashboard",
+                "url"=>'admin',
+                "icon"=>"home",
+                "seg0"=>['dashboard'],
+                "submenu"=>[
+                    [
+                    "text"=>"Dashboard",
+                    "url"=>'admin/dashboard',
+                    "icon"=>"bar-chart",
+                    ],
+                    [
+                    "text"=>"Search",
+                    "url"=>'admin/dashboard/search',
+                    "icon"=>"magnifier",
+                    ],
+                ],
+            ],
+            // Events
+            [
+                "text"=>"Events",
+                "url"=>'admin/event',
+                "icon"=>"rocket",
+                "seg0"=>['event'],
+                "submenu"=>[
+                    [
+                    "text"=>"List All Events",
+                    "url"=>'admin/event/view',
+                    ],
+                    [
+                    "text"=>"Add Event",
+                    "url"=>'admin/event/create/add',
+                    ],
+                    [
+                    "text"=>"Import Events",
+                    "url"=>'admin/event/import',
+                    ],
+                    [
+                    "text"=>"Export Events",
+                    "url"=>'admin/event/export',
+                    ],
+                ],
+            ],
+        ];
     }
 
 }

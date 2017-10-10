@@ -1,0 +1,19 @@
+ERROR - 2017-10-10 19:34:32 --> Severity: error --> Exception: Call to undefined function fbutton() /var/www/public/app/views/login.php 34
+ERROR - 2017-10-10 19:39:43 --> Query error: Unknown column 'user_username' in 'where clause' - Invalid query: SELECT `user_id`, `user_name`, `user_surname`
+FROM `users`
+WHERE `user_username` IS NULL
+AND `user_password` = '5832a25973c7a9a28b77bd5ad065fd9570df3aa0'
+ERROR - 2017-10-10 19:49:17 --> Query error: Unknown column 'user_passwor' in 'where clause' - Invalid query: SELECT `user_id`, `user_name`, `user_surname`
+FROM `users`
+WHERE `user_username` = 'johanphavenga'
+AND `user_passwor` = '1747985b4f339daebbbc78379358bce9e09e7e67'
+ERROR - 2017-10-10 19:51:35 --> 404 Page Not Found: 
+ERROR - 2017-10-10 19:52:50 --> 404 Page Not Found: 
+ERROR - 2017-10-10 19:53:25 --> Severity: error --> Exception: syntax error, unexpected 'die' (T_EXIT), expecting function (T_FUNCTION) /var/www/public/app/controllers/admin/Dashboard.php 4
+ERROR - 2017-10-10 19:54:56 --> 404 Page Not Found: 
+ERROR - 2017-10-10 19:55:10 --> Severity: error --> Exception: Unable to locate the model you have specified: Event_model /var/www/public/syscore/core/Loader.php 344
+ERROR - 2017-10-10 19:56:39 --> Severity: Notice --> Undefined variable: menu_array /var/www/public/app/views/templates/admin/sidebar.php 18
+ERROR - 2017-10-10 19:56:40 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/public/app/views/templates/admin/sidebar.php 18
+ERROR - 2017-10-10 19:58:35 --> Severity: Notice --> Undefined variable: menu_array /var/www/public/app/views/templates/admin/sidebar.php 18
+ERROR - 2017-10-10 19:58:35 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/public/app/views/templates/admin/sidebar.php 18
+ERROR - 2017-10-10 20:30:56 --> Severity: error --> Exception: Call to undefined method Login::userlogin() /var/www/public/app/controllers/Login.php 20
