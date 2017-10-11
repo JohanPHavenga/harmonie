@@ -43,8 +43,80 @@ class Admin_Controller extends MY_Controller {
             redirect('/login/admin', 'refresh');
         }
         
+        // setup auto crumbs from URI
+        $segs = $this->uri->segment_array();
+        $crumb_uri= substr(base_url(),0,-1);
+        $total_segments=$this->uri->total_segments();
+        for ($x = 1; $x <= $total_segments; $x++) {
+
+            if (($x==$total_segments) || ($x==3))
+            {
+                $crumb_uri="";
+            } else {
+                $crumb_uri.="/".$segs[$x];
+            }
+
+            if ($segs[$x]=="admin") { $segs[$x]="home"; }
+                        if ($segs[$x]=="dashboard") { continue; }
+            if ($segs[$x]=="delete") { $this->data_to_header['crumbs']=[]; break; }
+
+            $segs[$x]=str_replace("_"," ",$segs[$x]);
+            $this->data_to_header['crumbs'][ucwords($segs[$x])]=$crumb_uri;
+
+            if ($x==3) { break; }
+        }
+        
         $this->data_to_header['menu_array']=$this->set_admin_menu_array();
 
+    }
+    
+    function url_disect()
+    {
+        $url_info=[];
+        $url_info["base_url"]=base_url();
+        $url_info["url_string"]=uri_string();
+        $url_info["url_string_arr"]=explode("/",uri_string());
+
+        return $url_info;
+    }
+
+    function csv_handler($file_path)
+    {
+        $csv = array_map('str_getcsv', file($file_path));
+        array_walk($csv, function(&$a) use ($csv) {
+          $a = array_combine($csv[0], $a);
+        });
+        array_shift($csv);
+        return $csv;
+    }
+
+    function csv_flat_table_import($file_data)
+    {
+        foreach ($file_data as $entity) {
+            //reset($entity);
+
+            $id = array_shift($entity);
+
+            foreach ($entity as $key => $value) {
+                if (!empty($value)) {
+                    $user_data[$key]=$value;
+                }
+            }
+
+            // get ID - set action
+            if ($id>0) {
+                $action="edit";
+            } else {
+                $action="add";
+                $id=0;
+                if (isset($sum_data[$action])) { $id=max(array_keys($sum_data[$action]))+1; }
+            }
+
+            $sum_data[$action][$id]=$user_data;
+            unset($user_data);
+        }
+
+        return $sum_data;
     }
     
     function set_admin_menu_array() {
@@ -53,7 +125,7 @@ class Admin_Controller extends MY_Controller {
             [
                 "text"=>"Dashboard",
                 "url"=>'admin',
-                "icon"=>"home",
+                "icon"=>"bar-chart",
                 "seg0"=>['dashboard'],
                 "submenu"=>[
                     [
@@ -68,30 +140,33 @@ class Admin_Controller extends MY_Controller {
                     ],
                 ],
             ],
-            // Events
+            // Properties
             [
-                "text"=>"Events",
-                "url"=>'admin/event',
-                "icon"=>"rocket",
-                "seg0"=>['event'],
-                "submenu"=>[
-                    [
-                    "text"=>"List All Events",
-                    "url"=>'admin/event/view',
-                    ],
-                    [
-                    "text"=>"Add Event",
-                    "url"=>'admin/event/create/add',
-                    ],
-                    [
-                    "text"=>"Import Events",
-                    "url"=>'admin/event/import',
-                    ],
-                    [
-                    "text"=>"Export Events",
-                    "url"=>'admin/event/export',
-                    ],
-                ],
+                "text"=>"Properties",
+                "url"=>'admin/property',
+                "icon"=>"home",
+                "seg0"=>['property'],                
+            ],
+            // Users
+            [
+                "text"=>"Users",
+                "url"=>'admin/user',
+                "icon"=>"user",
+                "seg0"=>['user'],                
+            ],
+            // Locations
+            [
+                "text"=>"Locations",
+                "url"=>'admin/location',
+                "icon"=>"map",
+                "seg0"=>['location'],                
+            ],
+            // Locations
+            [
+                "text"=>"Property Types",
+                "url"=>'admin/type',
+                "icon"=>"pin",
+                "seg0"=>['type'],                
             ],
         ];
     }

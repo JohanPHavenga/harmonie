@@ -9,3 +9,15 @@ label {
 .table-scrollable .dataTable td>.btn-group open {
     left: -40px;
 }
+
+.page-header.navbar .page-logo > .logo-image, .page-header.navbar .page-logo > a {
+    padding-left: 10px;
+}
+
+.page-footer-inner a {
+    color: #14B9D6;
+}
+
+.page-bar {
+    padding-left: 10px;
+}

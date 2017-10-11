@@ -1,0 +1,34 @@
+ERROR - 2017-10-11 19:40:42 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Property.php 22
+ERROR - 2017-10-11 19:40:42 --> 404 Page Not Found: 
+ERROR - 2017-10-11 19:41:08 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Property.php 25
+ERROR - 2017-10-11 19:49:12 --> Severity: error --> Exception: Call to undefined method User::url_disect() /var/www/public/app/controllers/admin/User.php 50
+ERROR - 2017-10-11 19:50:03 --> Severity: Notice --> Undefined index: club_name /var/www/public/app/views/admin/user.php 41
+ERROR - 2017-10-11 20:24:14 --> Severity: error --> Exception: Call to undefined function fbuttonActionGroup2() /var/www/public/app/views/admin/user.php 41
+ERROR - 2017-10-11 20:26:48 --> Severity: Notice --> Undefined variable: role_dropdown /var/www/public/app/views/admin/user/create.php 86
+ERROR - 2017-10-11 20:26:48 --> Severity: Notice --> Undefined variable: club_dropdown /var/www/public/app/views/admin/user/create.php 91
+ERROR - 2017-10-11 20:27:32 --> Severity: error --> Exception: Call to undefined function ucfrist() /var/www/public/app/controllers/admin/User.php 82
+ERROR - 2017-10-11 20:27:42 --> Severity: Notice --> Undefined variable: role_dropdown /var/www/public/app/views/admin/user/create.php 86
+ERROR - 2017-10-11 20:27:42 --> Severity: Notice --> Undefined variable: club_dropdown /var/www/public/app/views/admin/user/create.php 91
+ERROR - 2017-10-11 20:28:27 --> Severity: Notice --> Undefined variable: role_dropdown /var/www/public/app/views/admin/user/create.php 86
+ERROR - 2017-10-11 20:28:27 --> Severity: Notice --> Undefined variable: club_dropdown /var/www/public/app/views/admin/user/create.php 91
+ERROR - 2017-10-11 20:30:35 --> Severity: Notice --> Undefined variable: role_dropdown /var/www/public/app/views/admin/user/create.php 86
+ERROR - 2017-10-11 20:30:35 --> Severity: Notice --> Undefined variable: club_dropdown /var/www/public/app/views/admin/user/create.php 91
+ERROR - 2017-10-11 20:30:42 --> Severity: Notice --> Undefined variable: role_dropdown /var/www/public/app/views/admin/user/create.php 86
+ERROR - 2017-10-11 20:30:42 --> Severity: Notice --> Undefined variable: club_dropdown /var/www/public/app/views/admin/user/create.php 91
+ERROR - 2017-10-11 20:47:23 --> Severity: error --> Exception: Call to undefined method User_model::get_user_detail() /var/www/public/app/controllers/admin/User.php 90
+ERROR - 2017-10-11 20:47:27 --> Severity: error --> Exception: Call to undefined method User_model::get_user_detail() /var/www/public/app/controllers/admin/User.php 90
+ERROR - 2017-10-11 20:48:45 --> Query error: Table 'harmonie.clubs' doesn't exist - Invalid query: SELECT `users`.*, `club_id`
+FROM `users`
+LEFT JOIN `clubs` USING (`club_id`)
+WHERE `user_id` = '2'
+ERROR - 2017-10-11 20:50:19 --> Severity: error --> Exception: syntax error, unexpected '$this' (T_VARIABLE) /var/www/public/app/controllers/admin/User.php 92
+ERROR - 2017-10-11 21:00:10 --> Severity: error --> Exception: Call to undefined method User_model::remove_edition() /var/www/public/app/controllers/admin/User.php 146
+ERROR - 2017-10-11 21:11:15 --> Severity: error --> Exception: Call to undefined function call_location_func_array() /var/www/public/app/controllers/admin/Location.php 17
+ERROR - 2017-10-11 21:35:09 --> 404 Page Not Found: 
+ERROR - 2017-10-11 21:36:44 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Dashboard.php 22
+ERROR - 2017-10-11 21:36:44 --> 404 Page Not Found: 
+ERROR - 2017-10-11 21:36:53 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Dashboard.php 22
+ERROR - 2017-10-11 21:36:53 --> 404 Page Not Found: 
+ERROR - 2017-10-11 21:37:00 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Dashboard.php 22
+ERROR - 2017-10-11 21:37:00 --> 404 Page Not Found: 
+ERROR - 2017-10-11 21:38:43 --> Severity: Notice --> Undefined variable: page /var/www/public/app/controllers/admin/Dashboard.php 33

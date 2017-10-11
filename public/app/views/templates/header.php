@@ -25,6 +25,9 @@ if (isset($meta_description)) {
         <meta content="Johan Havenga" name="author" />
 
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+        
+        <link href="<?= base_url('assets/css/open-sans.css'); ?>" rel="stylesheet" type="text/css" />
 
         <link rel="apple-touch-icon" sizes="152x152" href="<?=base_url('assets/favicons/apple-touch-icon.png');?>">
         <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url('assets/favicons/favicon-32x32.png')?>">

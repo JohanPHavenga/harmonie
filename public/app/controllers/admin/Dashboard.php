@@ -17,17 +17,10 @@ class Dashboard extends Admin_Controller {
 
     }
 
-    public function view($page = 'dashboard')
+    public function view()
     {
-        if ( ! file_exists(APPPATH.'views/admin/'.$page.'.php'))
-        {
-                // Whoops, we don't have a page for that!
-                show_404();
-        }
-
-        $this->view_url="admin/".$page;
-
-        $this->data_to_header['title'] = ucfirst($page);
+        
+        $this->data_to_header['title'] = "Dashboard";
         $this->data_to_header['crumbs'] =
                    [
                    "Home"=>"/admin",
@@ -37,7 +30,7 @@ class Dashboard extends Admin_Controller {
         $this->data_to_footer['js_to_load']=array(
             );
 
-        if ($page=="dashboard") {
+//        if ($page=="dashboard") {
 //            $this->load->model('event_model');
 //            $event_count=$this->event_model->record_count();
 //            
@@ -92,10 +85,10 @@ class Dashboard extends Admin_Controller {
 //                            "uri"=>"race/create/add",
 //                        ],
 //                    ];
-        }
+//        }
 
         $this->load->view($this->header_url, $this->data_to_header);
-        $this->load->view($this->view_url, $this->data_to_view);
+        $this->load->view("/admin/dashboard/view", $this->data_to_view);
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
 

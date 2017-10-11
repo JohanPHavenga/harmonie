@@ -8,7 +8,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>RoadRunning | Admin</title>
+        <title>Harmonie | Admin</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -38,6 +38,8 @@
         <link href="<?= base_url('assets/css/admin/theme.min.css'); ?>" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?= base_url('assets/css/admin/custom.css'); ?>" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
+        
+        <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('assets/favicons/favicon-admin.png');?>">
         <link rel="shortcut icon" href="<?= base_url('ci-icon.ico'); ?>" />
     </head>
     <!-- END HEAD -->
@@ -50,7 +52,7 @@
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
                     <a href="<?= base_url('admin'); ?>">
-                        <img src="<?= base_url('assets/img/admin/logo-default - Copy.png'); ?>" alt="logo" class="logo-default" /> </a>
+                        <img src="<?= base_url('assets/img/admin/admin_logo.png'); ?>" alt="logo" class="logo-default" /> </a>
                     <div class="menu-toggler sidebar-toggler">
                         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                     </div>
@@ -62,7 +64,7 @@
                 <!-- BEGIN PAGE ACTIONS -->
                 <!-- DOC: Remove "hide" class to enable the page header actions -->
                 <div class="page-actions">
-                    <div class="btn-group">
+<!--                    <div class="btn-group">
                         <button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-plus"></i>&nbsp;
                             <span class="hidden-sm hidden-xs">Import&nbsp;</span>&nbsp;
@@ -77,9 +79,9 @@
                                 <a href="<?= base_url('admin/event/import'); ?>">
                                     <i class="icon-info"></i> Event Information </a>
                             </li>
-                            <!-- <li class="divider"> </li> -->
+                             <li class="divider"> </li> 
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
                 <!-- END PAGE ACTIONS -->
                 <!-- BEGIN PAGE TOP -->
@@ -104,15 +106,15 @@
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <span class="username username-hide-on-mobile"> <?= $this->session->admin_user['user_name']; ?> </span>
+                                    <span class="username username-hide-on-mobile"> <?= $this->session->admin_user['user_name']." ".$this->session->admin_user['user_surname']; ?> </span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
-                                    <li>
+<!--                                    <li>
                                         <a href="<?= base_url('admin/user/profile'); ?>">
                                             <i class="icon-user"></i> My Profile </a>
                                     </li>
-                                    <li class="divider"> </li>
+                                    <li class="divider"> </li>-->
                                     <li>
                                         <a href="<?= base_url('login/logout'); ?>">
                                             <i class="icon-key"></i> Log Out </a>
@@ -164,10 +166,10 @@
                                     echo "<li><span>$text</span></li>";
                                 } else {
                                     echo "<li>";
-                                    if ($text == "Home") {
-                                        echo '<i class="icon-home"></i> ';
-                                    }
-                                    echo "<a href='$link'>$text</a> <i class='fa fa-angle-right'></i></li> ";
+//                                    if ($text == "Home") {
+//                                        echo '<i class="icon-home"></i> ';
+//                                    }
+                                    echo "<a href='$link'> $text</a> <i class='fa fa-angle-right'></i></li> ";
                                 }
                             }
                             echo "</ul>";

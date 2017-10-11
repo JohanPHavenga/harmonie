@@ -56,6 +56,27 @@ class User_model extends CI_Model {
         return false;
     }
 
+    
+    public function get_user_detail($id)
+    {
+        if( ! ($id))
+        {
+            return false;
+        }
+        else
+        {
+            $this->db->select("users.*");
+            $this->db->from("users");
+            $this->db->where('user_id', $id);
+            $query = $this->db->get();
+
+            if ($query->num_rows() > 0) {
+                return $query->row_array();
+            }
+            return false;
+        }
+
+    }
 
     public function set_user($action, $id, $user_data=[])
     {
@@ -66,6 +87,7 @@ class User_model extends CI_Model {
                       'user_name' => $this->input->post('user_name'),
                       'user_surname' => $this->input->post('user_surname'),
                       'user_email' => $this->input->post('user_email'),
+                      'user_username' => $this->input->post('user_username'),
                       'user_password' => $this->hash_pass($this->input->post('user_password')),
                   );
        } else {

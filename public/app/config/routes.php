@@ -54,7 +54,7 @@ $route['404_override'] = 'home/my_404';
 $route['translate_uri_dashes'] = FALSE;
 
 // for admin
-$route['admin'] = 'admin/dashboard';
+$route['admin'] = 'admin/dashboard/view';
 
 //basic pages running through HOME controller
 $route['faq'] = 'home/faq';
