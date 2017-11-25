@@ -38,7 +38,13 @@
                         $row['user_name']=$data_entry['user_name'];
                         $row['user_surname']=$data_entry['user_surname'];
                         $row['user_email']=$data_entry['user_email'];
-                        $row['actions']= fbuttonActionGroup($action_array);
+                        
+                        // haal editing af vir admin user
+                        if ($data_entry['user_id']==1) {
+                            $row['actions']= "";
+                        } else {
+                            $row['actions']= fbuttonActionGroup($action_array);
+                        }
                         
                         $this->table->add_row(
                                 $row['id'], 

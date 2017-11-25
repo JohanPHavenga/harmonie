@@ -1,0 +1,2 @@
+ERROR - 2017-11-23 21:34:58 --> Severity: error --> Exception: Call to protected method CI_DB_query_builder::_compile_select() from context 'Property' C:\localhost\harmonie\public\app\controllers\admin\Property.php 99
+ERROR - 2017-11-23 21:35:21 --> Severity: error --> Exception: Call to undefined method CI_DB_mysqli_driver::compile_select() C:\localhost\harmonie\public\app\controllers\admin\Property.php 99

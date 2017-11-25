@@ -1,0 +1,4 @@
+ERROR - 2017-11-19 20:44:13 --> Severity: error --> Exception: Call to undefined function base_url() C:\localhost\harmonie\public\app\config\routes.php 57
+ERROR - 2017-11-19 20:44:15 --> Severity: error --> Exception: Call to undefined function base_url() C:\localhost\harmonie\public\app\config\routes.php 57
+ERROR - 2017-11-19 21:04:43 --> Severity: Notice --> Undefined property: Property::$type_model C:\localhost\harmonie\public\app\controllers\admin\Property.php 29
+ERROR - 2017-11-19 21:04:43 --> Severity: error --> Exception: Call to a member function get_property_list() on null C:\localhost\harmonie\public\app\controllers\admin\Property.php 29

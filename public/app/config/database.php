@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['local'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
-	'username' => 'root',
-	'password' => 'root',
+	'hostname' => 'localhost',
+	'username' => 'harmonie_local',
+	'password' => 'Rf597$cU65sZ',
 	'database' => 'harmonie',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

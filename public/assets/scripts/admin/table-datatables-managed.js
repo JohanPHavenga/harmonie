@@ -65,6 +65,7 @@ var TableDatatablesManaged = function () {
                 [5, 10, 25, "All"] 
             ],
             "pageLength": 10,  
+            
         });
     }
     
@@ -80,6 +81,31 @@ var TableDatatablesManaged = function () {
         });
     }
     
+    // PROPERTIES   
+    var initPropertiesTable = function () {
+        var table = $('#properties_table');
+        table.dataTable({
+            "lengthMenu": [
+                [5, 10, 25, -1],
+                [5, 10, 25, "All"] 
+            ],
+            "pageLength": 10,  
+            "columnDefs": [
+                {  // set default column settings
+                    'orderable': false,
+                    'targets': [4]
+                }, 
+                {
+                    "searchable": false,
+                    "targets": [0]
+                },
+            ],
+            "order": [
+                [1, "asc"]
+            ]
+        });
+    }
+    
 
     return {
 
@@ -92,6 +118,7 @@ var TableDatatablesManaged = function () {
             initUsersTable();
             initLocationsTable();
             initTypesTable();
+            initPropertiesTable();
         }
 
     };
