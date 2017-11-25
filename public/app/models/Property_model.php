@@ -10,12 +10,21 @@ class Property_model extends CI_Model {
         return $this->db->count_all("properties");
     }
     
-    public function get_property_list()
+    public function get_property_list($params=[])
     {   
+        if (@$params['isfeatured']) {
+            $this->db->limit(6);
+        } 
+        
         $this->db->select("*");
         $this->db->from("properties");
             $this->db->join('locations', 'properties.location_id=locations.location_id', 'left');
             $this->db->join('types', 'types.type_id=types.type_id', 'left');
+            
+        if (@$params['isfeatured']) { 
+            $this->db->where('property_isfeatured', 1);
+        }
+        
         $this->db->order_by('property_code');
         $query = $this->db->get();
 
@@ -56,6 +65,19 @@ class Property_model extends CI_Model {
         {
           $property_data = array(
                       'property_code' => $this->input->post('property_code'),
+                      'property_address' => $this->input->post('property_address'),
+                      'property_sleeps' => $this->input->post('property_sleeps'),
+                      'property_bathrooms' => $this->input->post('property_bathrooms'),
+                      'property_bedrooms' => $this->input->post('property_bedrooms'),
+                      'property_summary' => $this->input->post('property_summary'),
+                      'property_overview' => $this->input->post('property_overview'),
+                      'property_rate_low' => $this->input->post('property_rate_low'),
+                      'property_rate_med' => $this->input->post('property_rate_med'),
+                      'property_rate_high' => $this->input->post('property_rate_high'),
+                      'property_gps' => $this->input->post('property_gps'),
+                      'property_ispublished' => $this->input->post('property_ispublished'),
+                      'property_isfeatured' => $this->input->post('property_isfeatured'),
+                      'property_img' => $this->input->post('property_img'),
                       'location_id' => $this->input->post('location_id'),              
                       'type_id' => $this->input->post('type_id'),
                   );

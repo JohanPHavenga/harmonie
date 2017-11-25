@@ -28,7 +28,7 @@ if ( ! function_exists('fdisplayCurrency'))
     {
         if ($amount)
         {            
-            return "R".number_format($amount, $des, '.', '');
+            return "R ".number_format($amount, $des, '.', ' ');
         } else {
             return false;
         }
@@ -136,20 +136,24 @@ if ( ! function_exists('flableStatus'))
     {
         switch ($status_num) {
             case 1:
-                $text="Active";
+                $text="Published";
                 $status="success";
                 break;
-            case 2:
-                $text="Not Active";
-                $status="danger";
-                break;
             default:
-                $text="No Status";
-                $status="warning";
+                $text="Not Published";
+                $status="danger";
                 break;
         }
        
         return flable($text, $status, "sm");      
+    }
+}
+
+if ( ! function_exists('flableFeatured')) 
+{
+    function flableFeatured($code) 
+    {
+        return flable($code, "primary", "med");      
     }
 }
 

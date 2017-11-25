@@ -7,15 +7,14 @@ var ComponentsEditors = function () {
 
         if ($('.wysihtml5').size() > 0) {
             $('.wysihtml5').wysihtml5({
-                "stylesheets": ["../plugins/bootstrap-wysihtml5/wysiwyg-color.css"]
+                "stylesheets": ["../assets/plugins/bootstrap-wysihtml5/wysiwyg-color.css"]
             });
         }
     }
 
     var handleSummernote = function () {
-        $('#edition_description').summernote({height: 200});
-        $('#edition_entry_detail').summernote({height: 200});
-        $('#race_notes').summernote({height: 200});
+        $('#property_address').summernote({height: 200});
+        $('#property_overview').summernote({height: 300});
         //API:
         //var sHTML = $('#summernote_1').code(); // get code
         //$('#summernote_1').destroy(); // destroy

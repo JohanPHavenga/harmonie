@@ -2,10 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends Frontend_Controller {
+    
+        public function __construct()
+        {       
+            parent::__construct();
+            $this->load->model('property_model');
+        }
 
 	/**
 	 * Index Page for this controller.
-	 *
+	 *s
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
 	 *	- or -
@@ -20,6 +26,8 @@ class Home extends Frontend_Controller {
 	 */
 	public function index()
 	{
+            $this->data_to_view["featured_properties"] = $this->property_model->get_property_list(["isfeatured"=>1]);
+            
             $this->data_to_header['active_menu']="home";
             
             $lp_params['count']=4;

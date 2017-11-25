@@ -15,12 +15,15 @@
                 {
                     // create table
                     $this->table->set_template(ftable('properties_table'));
-                    $this->table->set_heading($heading);
+                    $this->table->set_heading(
+                            ["ID","Property Code","Status","Rate High","Rate Low","Sleeps","Bath","Beds","Property Type","Location","Actions"]
+                            );
                     foreach ($property_data as $id=>$data_entry) {
                         
+                        $edit_uri="/admin/property/create/edit/".$data_entry['property_id'];
                         $action_array=[
                                 [
-                                "url"=>"/admin/property/create/edit/".$data_entry['property_id'],
+                                "url"=>$edit_uri,
                                 "text"=>"Edit",
                                 "icon"=>"icon-pencil",
                                 ],
@@ -37,12 +40,24 @@
 //                        $row['property_code']=$data_entry['property_code'];
 //                        $row['actions']= fbuttonActionGroup($action_array);
                         
+                        if ($data_entry['property_isfeatured']) 
+                        {
+                            $data_entry['property_code']=flableFeatured($data_entry['property_code']);
+                        }
+                        
+                        
                         $this->table->add_row(
-                                $data_entry['property_id'], 
-                                $data_entry['property_code'], 
-                                $data_entry['type_name'], 
-                                $data_entry['location_name'], 
-                                fbuttonActionGroup($action_array)
+                                    $data_entry['property_id'],
+                                    "<a href='$edit_uri'>".$data_entry['property_code']."</a>", 
+                                    flableStatus($data_entry['property_ispublished']),
+                                    fdisplayCurrency($data_entry['property_rate_high']), 
+                                    fdisplayCurrency($data_entry['property_rate_low']), 
+                                    $data_entry['property_sleeps'], 
+                                    $data_entry['property_bathrooms'], 
+                                    $data_entry['property_bedrooms'], 
+                                    $data_entry['type_name'], 
+                                    $data_entry['location_name'], 
+                                    fbuttonActionGroup($action_array)                                    
                                 );
 //                        $this->table->add_row($row);
                         unset($row);

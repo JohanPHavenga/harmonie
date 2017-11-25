@@ -1,0 +1,24 @@
+ERROR - 2017-11-25 21:12:32 --> Severity: Notice --> Undefined index: edition_status C:\localhost\harmonie\public\app\views\admin\Property\view.php 43
+ERROR - 2017-11-25 22:13:07 --> Severity: Warning --> file_exists() expects exactly 1 parameter, 2 given C:\localhost\harmonie\public\app\views\admin\Property\create.php 175
+ERROR - 2017-11-25 22:16:29 --> Severity: Notice --> Undefined variable: property_detail C:\localhost\harmonie\public\app\views\admin\Property\create.php 173
+ERROR - 2017-11-25 22:16:29 --> Severity: Notice --> Undefined variable: property_detail C:\localhost\harmonie\public\app\views\admin\Property\create.php 173
+ERROR - 2017-11-25 22:31:50 --> Severity: error --> Exception: syntax error, unexpected '?>', expecting '(' C:\localhost\harmonie\public\app\views\home.php 16
+ERROR - 2017-11-25 22:32:22 --> Severity: Notice --> Undefined variable: featured_properties C:\localhost\harmonie\public\app\views\home.php 8
+ERROR - 2017-11-25 22:32:22 --> Severity: Notice --> Undefined variable: featured_properties C:\localhost\harmonie\public\app\views\home.php 15
+ERROR - 2017-11-25 22:32:22 --> Severity: Warning --> Invalid argument supplied for foreach() C:\localhost\harmonie\public\app\views\home.php 15
+ERROR - 2017-11-25 22:32:22 --> Severity: Notice --> Undefined variable: featured_properties C:\localhost\harmonie\public\app\views\home.php 8
+ERROR - 2017-11-25 22:32:22 --> Severity: Notice --> Undefined variable: featured_properties C:\localhost\harmonie\public\app\views\home.php 15
+ERROR - 2017-11-25 22:32:22 --> Severity: Warning --> Invalid argument supplied for foreach() C:\localhost\harmonie\public\app\views\home.php 15
+ERROR - 2017-11-25 22:44:21 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `properties`
+LEFT JOIN `locations` ON `properties`.`location_id`=`locations' at line 2 - Invalid query: SELECT `TOP 6` *
+FROM `properties`
+LEFT JOIN `locations` ON `properties`.`location_id`=`locations`.`location_id`
+LEFT JOIN `types` ON `types`.`type_id`=`types`.`type_id`
+ORDER BY `property_code`
+ERROR - 2017-11-25 22:47:47 --> Severity: error --> Exception: Too few arguments to function Property_model::get_property_list(), 0 passed in C:\localhost\harmonie\public\app\controllers\admin\Property.php on line 29 and exactly 1 expected C:\localhost\harmonie\public\app\models\Property_model.php 13
+ERROR - 2017-11-25 22:48:06 --> Severity: Notice --> Undefined index: isfeatured C:\localhost\harmonie\public\app\models\Property_model.php 15
+ERROR - 2017-11-25 22:48:06 --> Severity: Notice --> Undefined index: isfeatured C:\localhost\harmonie\public\app\models\Property_model.php 24
+ERROR - 2017-11-25 22:53:13 --> Severity: Notice --> Array to string conversion C:\localhost\harmonie\public\syscore\libraries\Table.php 398
+ERROR - 2017-11-25 22:53:13 --> Severity: Notice --> Array to string conversion C:\localhost\harmonie\public\syscore\libraries\Table.php 398
+ERROR - 2017-11-25 22:55:22 --> Severity: error --> Exception: syntax error, unexpected ')' C:\localhost\harmonie\public\app\views\admin\Property\view.php 56
+ERROR - 2017-11-25 23:04:58 --> Severity: Error --> Cannot redeclare flableStatus() (previously declared in C:\localhost\harmonie\public\app\helpers\formulate_helper.php:135) C:\localhost\harmonie\public\app\helpers\formulate_helper.php 154

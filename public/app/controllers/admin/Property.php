@@ -27,7 +27,6 @@ class Property extends Admin_Controller {
         $this->load->library('table');
         
         $this->data_to_view["property_data"] = $this->property_model->get_property_list();
-        $this->data_to_view['heading']=["ID","Property Code","Property Type","Location","Actions"];
         
         $this->data_to_view['create_link']=$this->create_url;
         $this->data_to_header['title'] = "Property List";
@@ -85,6 +84,19 @@ class Property extends Admin_Controller {
         $this->data_to_header['title'] = ucfirst($action)." Property";
         $this->data_to_view['action']=$action;
         $this->data_to_view['form_url']=$this->create_url."/".$action;
+        
+        $this->data_to_header['css_to_load']=array(
+            "assets/plugins/bootstrap-summernote/summernote.css",
+            );
+
+        $this->data_to_footer['js_to_load']=array(
+            "assets/plugins/moment.min.js",
+            "assets/plugins/bootstrap-summernote/summernote.min.js",
+            );
+
+        $this->data_to_footer['scripts_to_load']=array(
+            "assets/scripts/admin/components-editors.js",
+            );
 
         // get drop downs
         $this->data_to_view['location_dropdown']=$this->location_model->get_location_dropdown();
@@ -98,6 +110,12 @@ class Property extends Admin_Controller {
                 
         // set validation rules
         $this->form_validation->set_rules('property_code', 'Property Code', 'required|min_length[2]');
+        $this->form_validation->set_rules('property_sleeps', 'Sleeps', 'numeric');
+        $this->form_validation->set_rules('property_bathrooms', 'Bathrooms', 'numeric');
+        $this->form_validation->set_rules('property_bedrooms', 'Bedrooms', 'numeric');
+        $this->form_validation->set_rules('property_rate_low', 'Rate Low', 'numeric');
+        $this->form_validation->set_rules('property_rate_med', 'Rate Medium', 'numeric');
+        $this->form_validation->set_rules('property_rate_high', 'Rate High', 'numeric');
         $this->form_validation->set_rules('location_id', 'Location', 'required|numeric|greater_than[0]',["greater_than"=>"Please select a location"]);
 
         // load correct view

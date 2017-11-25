@@ -4,158 +4,45 @@
         <div class="row">
             <div class="span9">
                 <h1 class="page-header">Featured properties</h1>
+                <?php
+//                    wts($featured_properties);
+                ?>
                 <div class="properties-grid">
                     <div class="row">
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="<?=base_url("property/detail/V23");?>"></a>
-                                    <img src="assets/img/tmp/property-small-1.png" alt="">
-                                </div><!-- /.content -->
+                        
+                        <?php
+                        // cycle through featured propertyes
+                        // this should only be 6
+                        foreach ($featured_properties as $property_id=>$property) {
+                            ?>
+                            <div class="property span3">
+                                <div class="image">
+                                    <div class="content">
+                                        <a href="<?=base_url("property/detail/".$property['property_code']."");?>"></a>
+                                        <img src="<?=base_url("photos/".$property['property_code']."/".$property['property_img']);?>" alt="" style="width: 270px; height: 200px">
+                                    </div><!-- /.content -->
+                                    
+                                    <div class="reduced">from <?= fdisplayCurrency($property['property_rate_low']); ?></div><!-- /.reduced -->
+                                </div><!-- /.image -->
 
-                                <div class="price">R 1 800</div><!-- /.price -->
-                                <div class="reduced">From </div><!-- /.reduced -->
-                            </div><!-- /.image -->
+                                <div class="title">
+                                    <h2><a href="detail.html"><?=$property['property_code'];?></a></h2>
+                                </div><!-- /.title -->
 
-                            <div class="title">
-                                <h2><a href="detail.html">V23</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Voëlklip, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">10</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">5</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
-
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="detail.html"></a>
-                                    <img src="assets/img/tmp/property-small-2.png" alt="">
-                                </div><!-- /.content -->
-                                <div class="price">from R 1 800</div><!-- /.price -->
-                            </div><!-- /.image -->
-
-                            <div class="title">
-                                <h2><a href="detail.html">H3</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Kwaaiwater, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">8</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">4</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
-
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="detail.html"></a>
-                                    <img src="assets/img/tmp/property-small-3.png" alt="">
-                                </div><!-- /.content -->
-
-                                <div class="price2">R 2 400</div><!-- /.price -->
-                                <div class="from">from </div><!-- /.reduced -->
-                            </div><!-- /.image -->
-
-                            <div class="title">
-                                <h2><a href="detail.html">S22</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Sandbaai, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">6</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">2</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">1</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
-
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="detail.html"></a>
-                                    <img src="assets/img/tmp/property-small-4.png" alt="">
-                                </div><!-- /.content -->
-                                <div class="reduced">from R 1 200</div><!-- /.reduced -->
-                            </div><!-- /.image -->
-
-                            <div class="title">
-                                <h2><a href="detail.html">NC34</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Northcliff, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">8</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">3</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">3</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
-
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="detail.html"></a>
-                                    <img src="assets/img/tmp/property-small-5.png" alt="">
-                                </div><!-- /.content -->
-
-                                <div class="price">R 1 950</div><!-- /.price -->
-                            </div><!-- /.image -->
-
-                            <div class="title">
-                                <h2><a href="detail.html">V12</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Voëlklip, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
+                                <div class="location"><?=$property['location_name'];?>, Hermanus</div><!-- /.location -->
+                                <div class="property-footer">
                                 <div class="area">
                                     <span class="key">Sleeps:</span><!-- /.key -->
-                                    <span class="value">10</span><!-- /.value -->
+                                    <span class="value"><?=$property['property_sleeps'];?></span><!-- /.value -->
                                 </div><!-- /.area -->
-                                <div class="bedrooms"><div class="content">5</div></div><!-- /.bedrooms -->
-                                <div class="bathrooms"><div class="content">4</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
-
-                        <div class="property span3">
-                            <div class="image">
-                                <div class="content">
-                                    <a href="detail.html"></a>
-                                    <img src="assets/img/tmp/property-small-6.png" alt="">
-                                </div><!-- /.content -->
-
-                                <div class="price2">R 19 200</div><!-- /.price -->
-                                <div class="from">from </div><!-- /.reduced -->
-                            </div><!-- /.image -->
-
-                            <div class="title">
-                                <h2><a href="detail.html">E30</a></h2>
-                            </div><!-- /.title -->
-
-                            <div class="location">Eastcliff, Hermanus</div><!-- /.location -->
-                            <div class="property-footer">
-                            <div class="area">
-                                <span class="key">Sleeps:</span><!-- /.key -->
-                                <span class="value">12</span><!-- /.value -->
-                            </div><!-- /.area -->
-                            <div class="bedrooms"><div class="content">6</div></div><!-- /.bedrooms -->
-                            <div class="bathrooms"><div class="content">4</div></div><!-- /.bathrooms -->
-                            </div>
-                        </div><!-- /.property -->
+                                <div class="bedrooms"><div class="content"><?=$property['property_bedrooms'];?></div></div><!-- /.bedrooms -->
+                                <div class="bathrooms"><div class="content"><?=$property['property_bathrooms'];?></div></div><!-- /.bathrooms -->
+                                </div>
+                            </div><!-- /.property -->
+                            <?php
+                        }
+                        ?>
+                        
                     </div><!-- /.row -->
                 </div><!-- /.properties-grid -->
             </div>
