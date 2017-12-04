@@ -2,4 +2,40 @@
 {
     color: #002457;
 }
+h1.page-header {
+    
+}
+h4.page-header {
+    margin: 0;
+    font-weight: 600;
+}
 
+.carousel .preview img {
+   max-width: 870px;
+}
+
+.property-detail .overview {
+    margin-right: 0;
+}
+
+.property-detail .overview table.property-details {
+    border-color: #002457;
+}
+.property-detail .overview table.property-details.table-bordered th, 
+.property-detail .overview table.property-details.table-bordered td {
+    border-color: #002457;
+}
+.property-detail .overview table.property-details th {
+    padding: 5px 7px;
+    text-transform: uppercase;
+    background: #002457;
+    color: #fff;
+}
+
+table.property-details tr > td:last-child {
+    font-weight: bold;
+}
+
+#property-map h3 {
+    margin: 0;
+}

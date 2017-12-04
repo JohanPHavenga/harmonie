@@ -2,7 +2,7 @@ $(document).ready(function() {
 	InitCarousel();
     InitPropertyCarousel();
 	InitOffCanvasNavigation();
-	InitMap();
+//	InitMap();
 	InitChosen();
 	InitEzmark();
 	InitPriceSlider();
@@ -256,7 +256,7 @@ function LoadMapProperty() {
     );
     var markers = new Array();
     var mapOptions = {
-        center: new google.maps.LatLng(-34.402364, 19.273556),
+//        center: new google.maps.LatLng(-34.402364, 19.273556),
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false

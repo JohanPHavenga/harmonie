@@ -85,7 +85,7 @@
 </div><!-- /#wrapper-outer -->
 
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true"></script>
+
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.ezmark.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.currency.js');?>"></script>
@@ -93,12 +93,33 @@
 <script type="text/javascript" src="<?= base_url('assets/js/retina.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/carousel.js');?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/gmap3.min.js');?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/gmap3.infobox.min.js');?>"></script>
+
 <script type="text/javascript" src="<?= base_url('assets/libraries/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/libraries/chosen/chosen.jquery.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/libraries/iosslider/_src/jquery.iosslider.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/realia.js');?>"></script>
+
+<?php
+    // load script files from controller
+        if (isset($scripts_to_load)) :
+            foreach ($scripts_to_load as $row):
+                if (substr($row, 0,4)=="http") {
+                    $js_link=$row;
+                } else {
+                    $js_link=base_url($row);
+                }
+                echo "<script src='$js_link' type='text/javascript'></script>";
+            endforeach;
+        endif;
+        
+        if (isset($scripts_to_display)) {
+            echo "<script>";
+                foreach ($scripts_to_display as $script) {
+                    echo $script;
+                }
+            echo "</script>";
+        }
+    ?>
 </body>
 </html>

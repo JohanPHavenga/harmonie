@@ -120,7 +120,7 @@ if (isset($meta_description)) {
                                                     </div><!-- /.site-phone -->
                                                 </div><!-- /.info -->
 
-                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="<?=base_url();?>property/list-my-property">List your property</a>
+                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="<?=base_url();?>property/list-my-property">View our properties</a>
                                             </div><!-- /.row -->
                                         </div><!-- /.navbar-inner -->
                                     </div><!-- /.navbar -->

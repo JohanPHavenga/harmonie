@@ -55,7 +55,28 @@ class Property_model extends CI_Model {
             }
             return false;
         }
+    }
+    
+    public function get_property_detail_from_code($prop_code)
+    {
+        if( ! ($prop_code))
+        {
+            return false;
+        }
+        else
+        {
+            $this->db->select("*");
+            $this->db->from("properties");
+                $this->db->join('locations', 'properties.location_id=locations.location_id', 'left');
+                $this->db->join('types', 'types.type_id=types.type_id', 'left');
+            $this->db->where('property_code', $prop_code);
+            $query = $this->db->get();
 
+            if ($query->num_rows() > 0) {
+                return $query->row_array();
+            }
+            return false;
+        }
     }
 
     public function set_property($action, $id, $property_data=[])
@@ -63,7 +84,12 @@ class Property_model extends CI_Model {
         // POSTED DATA
         if (empty($property_data))
         {
-          $property_data = array(
+            $is_published=FALSE;
+            $is_featured=FALSE;
+            
+            if ($this->input->post('property_ispublished')) { $is_published=TRUE; }
+            if ($this->input->post('property_isfeatured')) { $is_featured=TRUE; }
+            $property_data = array(
                       'property_code' => $this->input->post('property_code'),
                       'property_address' => $this->input->post('property_address'),
                       'property_sleeps' => $this->input->post('property_sleeps'),
@@ -75,8 +101,8 @@ class Property_model extends CI_Model {
                       'property_rate_med' => $this->input->post('property_rate_med'),
                       'property_rate_high' => $this->input->post('property_rate_high'),
                       'property_gps' => $this->input->post('property_gps'),
-                      'property_ispublished' => $this->input->post('property_ispublished'),
-                      'property_isfeatured' => $this->input->post('property_isfeatured'),
+                      'property_ispublished' => $is_published,
+                      'property_isfeatured' => $is_featured,
                       'property_img' => $this->input->post('property_img'),
                       'location_id' => $this->input->post('location_id'),              
                       'type_id' => $this->input->post('type_id'),

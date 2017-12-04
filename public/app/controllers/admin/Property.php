@@ -106,6 +106,9 @@ class Property extends Admin_Controller {
         {
             $this->data_to_view['property_detail']=$this->property_model->get_property_detail($id);
             $this->data_to_view['form_url']=$this->create_url."/".$action."/".$id;
+        } else {
+            $this->data_to_view['property_detail']['property_ispublished']=TRUE;
+            $this->data_to_view['property_detail']['property_isfeatured']=FALSE;
         }
                 
         // set validation rules

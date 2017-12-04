@@ -1,0 +1,14 @@
+ERROR - 2017-11-30 20:35:29 --> Query error: Column 'property_isfeatured' cannot be null - Invalid query: INSERT INTO `properties` (`property_code`, `property_address`, `property_sleeps`, `property_bathrooms`, `property_bedrooms`, `property_summary`, `property_overview`, `property_rate_low`, `property_rate_med`, `property_rate_high`, `property_gps`, `property_ispublished`, `property_isfeatured`, `property_img`, `location_id`, `type_id`) VALUES ('123', '<p>2<br></p>', '21', '12', '21', '12', '<p>12<br></p>', '12', '12', '12', '21', '1', NULL, '21', '9', '2')
+ERROR - 2017-11-30 20:40:38 --> Query error: Column 'property_isfeatured' cannot be null - Invalid query: INSERT INTO `properties` (`property_code`, `property_address`, `property_sleeps`, `property_bathrooms`, `property_bedrooms`, `property_summary`, `property_overview`, `property_rate_low`, `property_rate_med`, `property_rate_high`, `property_gps`, `property_ispublished`, `property_isfeatured`, `property_img`, `location_id`, `type_id`) VALUES ('A23', '<p>afeaf<br></p>', '2', '2', '2', 'afsef', '<p>fafaef<br></p>', '123', '2', '3', '2', '1', NULL, '2', '1', '2')
+ERROR - 2017-11-30 20:49:05 --> Severity: Notice --> Undefined variable: id C:\localhost\harmonie\public\app\models\Property_model.php 62
+ERROR - 2017-11-30 20:49:05 --> Severity: Notice --> Undefined variable: id C:\localhost\harmonie\public\app\models\Property_model.php 62
+ERROR - 2017-11-30 20:49:18 --> Severity: Notice --> Undefined variable: id C:\localhost\harmonie\public\app\models\Property_model.php 62
+ERROR - 2017-11-30 20:49:18 --> Severity: Notice --> Undefined variable: id C:\localhost\harmonie\public\app\models\Property_model.php 62
+ERROR - 2017-11-30 20:51:50 --> Severity: Notice --> Undefined index: location_name C:\localhost\harmonie\public\app\views\detail.php 5
+ERROR - 2017-11-30 20:51:51 --> Severity: Notice --> Undefined index: location_name C:\localhost\harmonie\public\app\views\detail.php 5
+ERROR - 2017-11-30 21:10:52 --> Severity: Notice --> Undefined variable: photos C:\localhost\harmonie\public\app\views\detail.php 175
+ERROR - 2017-11-30 21:10:52 --> Severity: Notice --> Undefined variable: photos C:\localhost\harmonie\public\app\views\detail.php 175
+ERROR - 2017-11-30 21:12:58 --> Severity: Notice --> Undefined index: photos C:\localhost\harmonie\public\app\controllers\Property.php 83
+ERROR - 2017-11-30 21:13:31 --> Severity: Notice --> Undefined variable: photos_arr C:\localhost\harmonie\public\app\controllers\Property.php 83
+ERROR - 2017-11-30 21:13:33 --> Severity: Notice --> Undefined variable: photos_arr C:\localhost\harmonie\public\app\controllers\Property.php 83
+ERROR - 2017-11-30 21:16:54 --> Severity: error --> Exception: syntax error, unexpected '$this' (T_VARIABLE) C:\localhost\harmonie\public\app\controllers\Property.php 85

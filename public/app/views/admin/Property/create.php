@@ -35,7 +35,7 @@
 
                             // Sleeps
                             echo "<div class='form-group'>";
-                            echo form_label('Sleeps', 'property_sleeps');
+                            echo form_label('Sleeps  <span class="compulsary">*</span>', 'property_sleeps');
                             echo form_input([
                                     'name'          => 'property_sleeps',
                                     'id'            => 'property_sleeps',
@@ -49,7 +49,7 @@
 
                             // Bathrooms
                             echo "<div class='form-group'>";
-                            echo form_label('Bathrooms', 'property_bathrooms');
+                            echo form_label('Bathrooms  <span class="compulsary">*</span>', 'property_bathrooms');
                             echo form_input([
                                     'name'          => 'property_bathrooms',
                                     'id'            => 'property_bathrooms',
@@ -63,7 +63,7 @@
 
                             // Bedrooms
                             echo "<div class='form-group'>";
-                            echo form_label('Bedrooms', 'property_bedrooms');
+                            echo form_label('Bedrooms  <span class="compulsary">*</span>', 'property_bedrooms');
                             echo form_input([
                                     'name'          => 'property_bedrooms',
                                     'id'            => 'property_bedrooms',
@@ -81,7 +81,7 @@
 
                             // Rate low
                             echo "<div class='form-group'>";
-                            echo form_label('Rate Low', 'property_rate_low');
+                            echo form_label('Rate Low  <span class="compulsary">*</span>', 'property_rate_low');
                             echo form_input([
                                     'name'          => 'property_rate_low',
                                     'id'            => 'property_rate_low',
@@ -95,7 +95,7 @@
 
                             // Rate Med
                             echo "<div class='form-group'>";
-                            echo form_label('Rate Medium', 'property_rate_med');
+                            echo form_label('Rate Medium  <span class="compulsary">*</span>', 'property_rate_med');
                             echo form_input([
                                     'name'          => 'property_rate_med',
                                     'id'            => 'property_rate_med',
@@ -109,7 +109,7 @@
 
                             // Rate low
                             echo "<div class='form-group'>";
-                            echo form_label('Rate High', 'property_rate_high');
+                            echo form_label('Rate High  <span class="compulsary">*</span>', 'property_rate_high');
                             echo form_input([
                                     'name'          => 'property_rate_high',
                                     'id'            => 'property_rate_high',
@@ -127,7 +127,7 @@
 
                     // GPS
                     echo "<div class='form-group'>";
-                    echo form_label('GPS', 'property_gps');
+                    echo form_label('GPS  <span class="compulsary">*</span>', 'property_gps');
                     echo form_input([
                             'name'          => 'property_gps',
                             'id'            => 'property_gps',
@@ -203,7 +203,7 @@
                 
                     // Main Image
                     echo "<div class='form-group'>";
-                    echo form_label('Short Description', 'property_summary');
+                    echo form_label('Short Description  <span class="compulsary">*</span>', 'property_summary');
                     echo form_input([
                             'name'          => 'property_summary',
                             'id'            => 'property_summary',
@@ -216,7 +216,7 @@
                     
                     // Property Overview
                     echo "<div class='form-group'>";
-                    echo form_label('Overview', 'property_overview');
+                    echo form_label('Overview  <span class="compulsary">*</span>', 'property_overview');
                     echo form_textarea([
                             'name'          => 'property_overview',
                             'id'            => 'property_overview',
@@ -227,7 +227,7 @@
                 
                     // Property Address
                     echo "<div class='form-group'>";
-                    echo form_label('Address', 'property_address');
+                    echo form_label('Address  <span class="compulsary">*</span>', 'property_address');
                     echo form_textarea([
                             'name'          => 'property_address',
                             'id'            => 'property_address',
