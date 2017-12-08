@@ -3,6 +3,7 @@ class Property extends Admin_Controller {
 
     private $return_url="/admin/property";
     private $create_url="/admin/property/create";    
+    private $mapped_table_column_arr=[];    
     
     public function __construct()
     {
@@ -26,7 +27,7 @@ class Property extends Admin_Controller {
         // load helpers / libraries
         $this->load->library('table');
         
-        $this->data_to_view["property_data"] = $this->property_model->get_property_list();
+        $this->data_to_view["property_data"] = $this->property_model->get_property_list();        
         
         $this->data_to_view['create_link']=$this->create_url;
         $this->data_to_header['title'] = "Property List";
@@ -40,9 +41,19 @@ class Property extends Admin_Controller {
         $this->data_to_header['page_action_list']=
                 [
                     [
-                        "name"=>"Add Property",
-                        "icon"=>"pin",
-                        "uri"=>"property/create/add",
+                    "name"=>"Add property",
+                    "uri"=>'property/create/add',
+                    "icon"=>"plus",
+                    ],
+                    [
+                    "name"=>"Import properties",
+                    "uri"=>'property/import',
+                    "icon"=>"arrow-up",
+                    ],
+                    [
+                    "name"=>"Export properties",
+                    "uri"=>'property/export',
+                    "icon"=>"arrow-down",
                     ],
                 ];
         
@@ -181,6 +192,193 @@ class Property extends Admin_Controller {
         $this->session->set_flashdata('alert', $msg);
         $this->session->set_flashdata('status', $status);
         redirect($this->return_url);
+    }
+    
+    
+    public function import($submit=NULL) {
+
+        $this->load->helper('form');
+        $this->load->library('upload');
+        $this->load->library('table');
+
+        $this->data_to_header['title'] = "Import Properties";
+        $this->data_to_view['form_url']="/admin/property/import/confirm";
+
+        $config['upload_path']          = $this->upload_path;
+        $config['allowed_types']        = 'csv';
+        $config['max_size']             = 8192;
+        $this->upload->initialize($config);
+
+        if ( ! $this->upload->do_upload('propfile'))
+        {
+            if (!empty($submit))
+            {
+                $this->data_to_view['error'] = $this->upload->display_errors();
+            }
+            
+            $this->load->view($this->header_url, $this->data_to_header);
+            $this->load->view("/admin/property/import", $this->data_to_view);
+            $this->load->view($this->footer_url, $this->data_to_footer);
+        }
+        else
+        {
+            if ($submit=="confirm") {
+                // get file data and meta data
+                // $this->data_to_view['file_meta_data'] = $this->upload->data();
+                                
+                $file_data = $this->csv_handler($this->upload->data('full_path'));
+
+                // send to view
+                $this->data_to_view['import_property_data']=$file_data;
+
+                $this->data_to_header['crumbs'] =
+                   [
+                   "Home"=>"/admin",
+                   "Event"=> "/admin/property",
+                   "Import" => "/admin/property/import",
+                   "Confirm" => "",
+                   ];
+                
+                
+                $this->load->view($this->header_url, $this->data_to_header);
+                $this->load->view("/admin/property/import", $this->data_to_view);
+                $this->load->view($this->footer_url, $this->data_to_footer);
+
+            } else {
+                die("Upload failure");
+            }
+
+        }
+
+    }
+
+
+    function run_import() {
+        // debug not to write to DB
+        $debug=0;
+
+        $this->load->model('edition_model');
+        $this->load->model('race_model');
+
+        $event_data=$edition_data=$race_data=[];
+
+        // EVENTS
+        foreach ($_SESSION['import_event_data'] as $event_action=>$event_list) {
+
+            foreach ($event_list as $event_id=>$event) {
+
+                // set die event_data array
+                $event_field_list=$this->get_event_field_list();
+                foreach ($event_field_list as $event_field) {
+                    // as daar 'n value is
+                    if ($event[$event_field]) {
+                        $event_data[$event_field]=$event[$event_field];
+                    }
+                }
+                // write to DB
+                if (!empty($event_data)) {
+                    $event_id=$this->event_model->set_event($event_action, $event_id, $event_data, $debug);
+                }
+
+
+
+                // EDITIONS
+                foreach ($event['edition_data'] as $edition_action=>$edition_list) {
+
+                    foreach ($edition_list as $edition_id=>$edition) {
+                        // set die edition_data array
+                        $edition_field_list=$this->get_edition_field_list();
+                        foreach ($edition_field_list as $edition_field) {
+                            // as daar 'n value is
+                            if ($edition[$edition_field]) {
+                                $edition_data[$edition_field]=$edition[$edition_field];
+                            }
+                        }
+
+                        // write to DB
+                        if (!empty($edition_data)) {
+                            $edition_data['event_id']=$event_id;
+                            $edition_id=$this->edition_model->set_edition($edition_action, $edition_id, $edition_data, $debug);
+                        }
+
+
+                        // RACES
+                        foreach ($edition['race_data'] as $race_action=>$race_list) {
+
+                            foreach ($race_list as $race_id=>$race) {
+                                // set die race_data array
+                                $race_field_list=$this->get_race_field_list();
+                                foreach ($race_field_list as $race_field) {
+                                    // as daar 'n value is
+                                    if ($race[$race_field]) {
+                                        $race_data[$race_field]=$race[$race_field];
+                                    }
+                                }
+
+                                // write to DB
+                                if (!empty($race_data)) {
+                                    $race_data['edition_id']=$edition_id;
+                                    $race_id=$this->race_model->set_race($race_action, $race_id, $race_data, $debug);
+                                }
+
+                                unset($race_data);
+                            }
+                        }
+
+                        unset($edition_data);
+                    }
+                }
+
+                unset($event_data);
+            }
+        }
+
+        // go to view
+        $this->session->set_flashdata([
+            'alert'=>"Upload Successfull",
+            'status'=>"success",
+            ]);
+
+        $this->data_to_header['crumbs'] =
+                   [
+                   "Home"=>"/admin",
+                   "Event"=> "/admin/event",
+                   "Import"=> "/admin/event/import",
+                   "Success"=> "",
+                   ];
+
+        $this->load->view($this->header_url, $this->data_to_header);
+        $this->load->view("/admin/event/import_success", $this->data_to_view);
+        $this->load->view($this->footer_url, $this->data_to_footer);
+
+        // wts($_SESSION['import_event_data']);
+        // die("i run");
+    }
+
+
+    public function export() {
+
+        $this->load->dbutil();
+        $this->load->helper('download');
+
+        $filename="harmonieprop_export_".date("Ymd").".csv";
+        
+        
+        $field_arr=$this->property_model->map_table_columns("properties");
+        
+        /* get the object   */
+        $export = $this->property_model->get_property_list_data(
+                [
+                "field_arr"=>$field_arr,
+                ]
+                );
+        /*  pass it to db utility function  */
+        $new_report = $this->dbutil->csv_from_result($export);
+        mb_convert_encoding($new_report, 'UTF-16LE', 'UTF-8');
+        /*  Force download the file */
+        force_download($filename, "\xEF\xBB\xBF".$new_report);
+        /*  Done    */
+
     }
 
 

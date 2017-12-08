@@ -127,25 +127,36 @@ class Admin_Controller extends MY_Controller {
                 "url"=>'admin',
                 "icon"=>"bar-chart",
                 "seg0"=>['dashboard'],
-                "submenu"=>[
-                    [
-                    "text"=>"Dashboard",
-                    "url"=>'admin/dashboard',
-                    "icon"=>"bar-chart",
-                    ],
-                    [
-                    "text"=>"Search",
-                    "url"=>'admin/dashboard/search',
-                    "icon"=>"magnifier",
-                    ],
-                ],
+                
             ],
             // Properties
             [
                 "text"=>"Properties",
                 "url"=>'admin/property',
                 "icon"=>"home",
-                "seg0"=>['property'],                
+                "seg0"=>['property'],  
+                "submenu"=>[
+                    [
+                    "text"=>"List properties",
+                    "url"=>'admin/property',
+                    "icon"=>"home",
+                    ],
+                    [
+                    "text"=>"Add property",
+                    "url"=>'admin/property/create/add',
+                    "icon"=>"plus",
+                    ],
+                    [
+                    "text"=>"Import properties",
+                    "url"=>'admin/property/import',
+                    "icon"=>"arrow-up",
+                    ],
+                    [
+                    "text"=>"Export properties",
+                    "url"=>'admin/property/export',
+                    "icon"=>"arrow-down",
+                    ],
+                ],              
             ],
             // Users
             [

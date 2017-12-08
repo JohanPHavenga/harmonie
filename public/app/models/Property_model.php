@@ -149,7 +149,29 @@ class Property_model extends CI_Model {
             return $this->db->trans_status();
         }
     }
-        
+    
+    
+    public function get_property_list_data($params) {
+            
+            // field_arr is compulsary
+            $field_arr=$params['field_arr'];
+
+            $this->db->select($field_arr);
+            $this->db->from("properties");
+//            $this->db->join('editions', 'editions.event_id = events.event_id');
+//            $this->db->join('races', 'races.edition_id = editions.edition_id');
+//            $this->db->join('towns', 'towns.town_id = events.town_id');
+            
+            
+//            $this->db->where("events.event_status", 1);
+//            $this->db->where("editions.edition_status", 1);
+//            $this->db->where("races.race_status", 1);
+
+//            $this->db->order_by("edition_date", $sort);
+//            $this->db->order_by("race_distance", "DESC");
+
+            return $this->db->get();
+        }
                 
         
 }

@@ -36,7 +36,7 @@
                         if ($uri_string==$page['url']) { $s.=" active open"; }
                         echo "<li class='nav-item $s'>";
                             echo "<a href='".base_url().$page['url']."' class='nav-link'>";
-                            if (@$page['icon']) { echo "<i class='icon-".$page['icon']."'></i>"; }
+                            if (@$page['icon']) { echo "<i class='icon-".$page['icon']."'></i> "; }
                             echo "<span class='title'>$page[text]</span>";
                         if (@in_array($segs[1],$section['seg1'])) {
                             echo "<span class='selected'></span>";
