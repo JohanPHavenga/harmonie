@@ -1,10 +1,30 @@
-#header-wrapper #header #header-inner .navbar .navbar-inner .site-name .brand 
+.breadcrumb-wrapper
+{
+    background-color: #002457;
+}
+.breadcrumb-wrapper .breadcrumb li a 
+{
+    color: #fff;
+}
+
+#header-wrapper #header #header-inner .navbar .navbar-inner .site-name .brand
 {
     color: #002457;
 }
-h1.page-header {
-    
+
+.navigation-wrapper .navigation .nav li .nolink:hover, 
+.navigation-wrapper .navigation .nav li a:hover
+{
+    background-color: #002457;
+    color: #fff;
 }
+
+.navigation-wrapper .navigation .nav li ul {
+    background-color: #002457;
+    color: #fff;
+    border-color: #fff;
+}
+
 h4.page-header {
     margin: 0;
     font-weight: 600;
@@ -38,4 +58,25 @@ table.property-details tr > td:last-child {
 
 #property-map h3 {
     margin: 0;
+}
+
+.properties-grid .property .property-footer {
+    background-color: #002457;
+    
+}
+
+.carousel .content
+{
+    background-color: #002457;
+}
+.carousel .caroufredsel_wrapper {
+    background-color: #002457;
+    
+}
+
+label.control-label-inline,
+div.controls-inline,
+div.control-group-inline
+{
+    display: inline;
 }

@@ -47,51 +47,40 @@
         <?php
         // if import data was successfull
             } else {
-
-                foreach ($import_event_data as $event_action=>$event_list) {
+                
+                foreach ($import_property_data as $property_action=>$property_list) {
                     $k=0;
                     ?>
                     <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption">
                             <i class="icon-edit font-dark"></i>
-                            <span class="caption-subject font-dark bold uppercase"><?=$event_action;?></span>
+                            <span class="caption-subject font-dark bold uppercase"><?=$property_action;?></span>
                         </div>
                     </div>
                     <?php
                     $this->table->set_template(ftable());
-                    foreach ($event_list as $event_id=>$event) {
-                        $data[$k]="<b>".$event['event_name']."</b>";
-                        if (empty($event['town_id'])) { $data[$k].= " - <span style='color: red; font-weight: bold;'>Town not found!</span>"; }
-
-                        foreach ($event['edition_data'] as $edition_action=>$edition_list) {
-                            $data[$k].="<br>&nbsp;Edition: [<b>".$edition_action."</b>]";
-                            foreach ($edition_list as $edition_id=>$edition) {
-                                $data[$k].="<br>&nbsp;&nbsp;".$edition['edition_name']." - ".$edition['edition_date']."";
-
-                                foreach ($edition['race_data'] as $race_action=>$race_list) {
-                                    $data[$k].="<br>&nbsp;&nbsp;&nbsp;Race: [<b>".$race_action."</b>]";
-                                    foreach ($race_list as $race_id=>$race) {
-                                        $data[$k].="<br>&nbsp;&nbsp;&nbsp;&nbsp;".$race['race_name']." - ".$race['race_distance']."";
-                                    }
-                                }
-                            }
-                        }
-
+                    foreach ($property_list as $property_id=>$property) {
+                        $data[$k]="<b>".$property['property_code']."</b>";
+                        $data[$k].=" - Sleeps ".$property['property_sleeps'];
+                        $data[$k].=" - Featured ".$property['property_isfeatured'];
+                        $data[$k].="<br>".$property['property_address'];
+                        
                         $this->table->add_row($data);
                         unset($data);
                         $k++;
                     }
                     echo $this->table->generate();
                     ?>
+                    </div>
+                    <?php
+                }
+                ?>
                     <div class='btn-group'>
                         <a href="./" class="btn btn-danger" role="button">Cancel</a>
                         <a href="../run_import" class="btn btn-success" role="button">Confirm</a>
                     </div>
-
-                    </div>
-                    <?php
-                }
+                <?php
                 // @wts($import_event_data);
             }
         ?>

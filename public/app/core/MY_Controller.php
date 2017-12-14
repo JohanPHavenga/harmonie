@@ -98,9 +98,8 @@ class Admin_Controller extends MY_Controller {
             $id = array_shift($entity);
 
             foreach ($entity as $key => $value) {
-                if (!empty($value)) {
-                    $user_data[$key]=$value;
-                }
+                if (empty($value)) { $value=FALSE; }
+                $user_data[$key]=$value;
             }
 
             // get ID - set action
@@ -201,9 +200,10 @@ class Frontend_Controller extends MY_Controller {
         
         $this->load->model('property_model');
         
-        $lp_params['count']=3;
+        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
+        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
+        
         $cf_params=[];
-        $this->data_to_footer['latest_prop'] = $this->load->view('templates/latest_prop', $lp_params, TRUE);
         $this->data_to_footer['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
         
         

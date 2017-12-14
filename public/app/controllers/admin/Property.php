@@ -3,7 +3,7 @@ class Property extends Admin_Controller {
 
     private $return_url="/admin/property";
     private $create_url="/admin/property/create";    
-    private $mapped_table_column_arr=[];    
+//    private $mapped_table_column_arr=[];    
     
     public function __construct()
     {
@@ -27,7 +27,7 @@ class Property extends Admin_Controller {
         // load helpers / libraries
         $this->load->library('table');
         
-        $this->data_to_view["property_data"] = $this->property_model->get_property_list();        
+        $this->data_to_view["property_data"] = $this->property_model->get_property_list(["include_unpublished"=>TRUE]);        
         
         $this->data_to_view['create_link']=$this->create_url;
         $this->data_to_header['title'] = "Property List";
@@ -112,7 +112,10 @@ class Property extends Admin_Controller {
         // get drop downs
         $this->data_to_view['location_dropdown']=$this->location_model->get_location_dropdown();
         $this->data_to_view['type_dropdown']=$this->type_model->get_type_dropdown();
-
+        
+        $this->data_to_view['sleeps_dropdown']=$this->property_model->get_sleeps_dropdown();
+        $this->data_to_view['sleeps_dropdown'][0]="Select";
+        
         if ($action=="edit")
         {
             $this->data_to_view['property_detail']=$this->property_model->get_property_detail($id);
@@ -226,10 +229,11 @@ class Property extends Admin_Controller {
                 // get file data and meta data
                 // $this->data_to_view['file_meta_data'] = $this->upload->data();
                                 
-                $file_data = $this->csv_handler($this->upload->data('full_path'));
+                $file_data = $this->csv_handler($this->upload->data('full_path'));  
+                $_SESSION['import_property_data']=$this->csv_flat_table_import($file_data);
 
                 // send to view
-                $this->data_to_view['import_property_data']=$file_data;
+                $this->data_to_view['import_property_data']=$_SESSION['import_property_data'];
 
                 $this->data_to_header['crumbs'] =
                    [
@@ -255,81 +259,15 @@ class Property extends Admin_Controller {
 
     function run_import() {
         // debug not to write to DB
-        $debug=0;
+        $debug=1;
 
-        $this->load->model('edition_model');
-        $this->load->model('race_model');
-
-        $event_data=$edition_data=$race_data=[];
+        $property_data=[];
 
         // EVENTS
-        foreach ($_SESSION['import_event_data'] as $event_action=>$event_list) {
+        foreach ($_SESSION['import_property_data'] as $property_action=>$property_list) {
 
-            foreach ($event_list as $event_id=>$event) {
-
-                // set die event_data array
-                $event_field_list=$this->get_event_field_list();
-                foreach ($event_field_list as $event_field) {
-                    // as daar 'n value is
-                    if ($event[$event_field]) {
-                        $event_data[$event_field]=$event[$event_field];
-                    }
-                }
-                // write to DB
-                if (!empty($event_data)) {
-                    $event_id=$this->event_model->set_event($event_action, $event_id, $event_data, $debug);
-                }
-
-
-
-                // EDITIONS
-                foreach ($event['edition_data'] as $edition_action=>$edition_list) {
-
-                    foreach ($edition_list as $edition_id=>$edition) {
-                        // set die edition_data array
-                        $edition_field_list=$this->get_edition_field_list();
-                        foreach ($edition_field_list as $edition_field) {
-                            // as daar 'n value is
-                            if ($edition[$edition_field]) {
-                                $edition_data[$edition_field]=$edition[$edition_field];
-                            }
-                        }
-
-                        // write to DB
-                        if (!empty($edition_data)) {
-                            $edition_data['event_id']=$event_id;
-                            $edition_id=$this->edition_model->set_edition($edition_action, $edition_id, $edition_data, $debug);
-                        }
-
-
-                        // RACES
-                        foreach ($edition['race_data'] as $race_action=>$race_list) {
-
-                            foreach ($race_list as $race_id=>$race) {
-                                // set die race_data array
-                                $race_field_list=$this->get_race_field_list();
-                                foreach ($race_field_list as $race_field) {
-                                    // as daar 'n value is
-                                    if ($race[$race_field]) {
-                                        $race_data[$race_field]=$race[$race_field];
-                                    }
-                                }
-
-                                // write to DB
-                                if (!empty($race_data)) {
-                                    $race_data['edition_id']=$edition_id;
-                                    $race_id=$this->race_model->set_race($race_action, $race_id, $race_data, $debug);
-                                }
-
-                                unset($race_data);
-                            }
-                        }
-
-                        unset($edition_data);
-                    }
-                }
-
-                unset($event_data);
+            foreach ($property_list as $property_id=>$property) {
+                $property_id=$this->property_model->set_property($property_action, $property_id, $property, $debug);
             }
         }
 
@@ -342,13 +280,13 @@ class Property extends Admin_Controller {
         $this->data_to_header['crumbs'] =
                    [
                    "Home"=>"/admin",
-                   "Event"=> "/admin/event",
-                   "Import"=> "/admin/event/import",
+                   "Event"=> "/admin/property",
+                   "Import" => "/admin/property/import",
                    "Success"=> "",
                    ];
 
         $this->load->view($this->header_url, $this->data_to_header);
-        $this->load->view("/admin/event/import_success", $this->data_to_view);
+        $this->load->view("/admin/property/import_success", $this->data_to_view);
         $this->load->view($this->footer_url, $this->data_to_footer);
 
         // wts($_SESSION['import_event_data']);
@@ -365,6 +303,8 @@ class Property extends Admin_Controller {
         
         
         $field_arr=$this->property_model->map_table_columns("properties");
+        unset($field_arr['created_date']);
+        unset($field_arr['updated_date']);
         
         /* get the object   */
         $export = $this->property_model->get_property_list_data(

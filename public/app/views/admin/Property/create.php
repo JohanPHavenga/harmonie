@@ -33,19 +33,12 @@
 
                             echo '</div>';
 
-                            // Sleeps
+                            //  Sleeps Dropdown
                             echo "<div class='form-group'>";
-                            echo form_label('Sleeps  <span class="compulsary">*</span>', 'property_sleeps');
-                            echo form_input([
-                                    'name'          => 'property_sleeps',
-                                    'id'            => 'property_sleeps',
-                                    'type'          => 'number',
-                                    'value'         => set_value('property_sleeps', @$property_detail['property_sleeps']),
-                                    'class'         => 'form-control input-small',
-                                    'required'      => '',
-                                ]);
-
-                            echo '</div>';  
+                            echo form_label('Sleeps <span class="compulsary">*</span>', 'property_sleeps');
+                            echo form_dropdown('property_sleeps', $sleeps_dropdown, @$property_detail['property_sleeps'], ["id"=>"property_sleeps","class"=>"form-control input-small"]);        
+                            echo "</div>";
+                            
 
                             // Bathrooms
                             echo "<div class='form-group'>";

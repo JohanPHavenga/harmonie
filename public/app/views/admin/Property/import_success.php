@@ -5,7 +5,7 @@
             <div class="portlet-title">
                 <div class="caption">
                     <i class="icon-edit font-dark"></i>
-                    <span class="caption-subject font-dark bold uppercase">Import Event Data</span>
+                    <span class="caption-subject font-dark bold uppercase">Import Property Data</span>
                 </div>
             </div>
             <div class='btn-group'>

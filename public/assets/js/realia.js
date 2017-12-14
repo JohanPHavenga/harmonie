@@ -175,7 +175,7 @@ function InitAccordion() {
 }
 
 function InitPriceSlider() {
-    jQuery('.price-value .from').text(1000);
+    jQuery('.price-value .from').text(0);
     jQuery('.price-value .from').currency({ region: 'ZAR', thousands: ' ', decimal: ',', decimals: 0 });
 
     jQuery('.price-value .to').text(10000);
@@ -183,9 +183,9 @@ function InitPriceSlider() {
 
     $('.property-filter .price-slider').slider({
         range: true,
-        min: 1000,
+        min: 0,
         max: 10000,
-        values: [1000, 10000],
+        values: [0, 10000],
         slide: function(event, ui) {
             jQuery('.property-filter .price-from input').attr('value', ui.values[0]);
             jQuery('.property-filter .price-to input').attr('value', ui.values[1]);

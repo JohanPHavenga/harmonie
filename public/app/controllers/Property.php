@@ -26,10 +26,47 @@ class Property extends Frontend_Controller {
     
     public function grid($property_type)
     {            
+        $this->load->model('location_model');
+        $this->load->model('type_model');
+    
         $this->data_to_header['title']="Properties Listing | ".ucfirst($property_type);
-        $this->data_to_header['active_menu']="property";
+        $this->data_to_header['active_menu']="property";        
         
-        $this->data_to_view['filter']['property_type']=$property_type;
+        // pre-filter
+        switch ($property_type) {
+            case "houses":
+                $filter['type_id']=1;
+                break;
+            case "apartments":
+                $filter['type_id']=2;
+                break;
+            default:
+                $filter['type_id']=0;             
+                break;
+        }
+        
+        if ($this->input->post()) {
+            $filter=$this->input->post(NULL, TRUE);
+        } else {
+            $filter['sort']="property_sleeps";
+            $filter['order']="DESC";
+        }
+        $this->data_to_view["filter"]=$filter;
+        $this->data_to_view["prop_list"] = $this->property_model->get_property_filter($filter); 
+       
+        // get Dropdowns
+        $this->data_to_view["location_dropdown"] = $this->location_model->get_location_dropdown();
+        $this->data_to_view["type_dropdown"] = $this->type_model->get_type_dropdown();
+        $this->data_to_view["beds_dropdown"] = $this->property_model->get_beds_dropdown(); 
+        $this->data_to_view["sleeps_dropdown"] = $this->property_model->get_sleeps_dropdown(); 
+        
+        $this->data_to_view["sort_dropdown"]["property_rate_low"]="Rate";                
+        $this->data_to_view["sort_dropdown"]["property_bedrooms"]="Beds";
+        $this->data_to_view["sort_dropdown"]["property_sleeps"]="Sleeps";
+        
+        $this->data_to_view["order_dropdown"]["ASC"]="ASC";                
+        $this->data_to_view["order_dropdown"]["DESC"]="DESC";
+            
 
         $this->load->view($this->header_url, $this->data_to_header);
         $this->load->view('property', $this->data_to_view);
@@ -39,8 +76,7 @@ class Property extends Frontend_Controller {
     public function list_my_property()
     {            
         $this->data_to_header['title']="List my property";
-        $this->data_to_header['active_menu']="property";
-        
+        $this->data_to_header['active_menu']="property";        
 
         $this->load->view($this->header_url, $this->data_to_header);
         $this->load->view('list_my_property', $this->data_to_view);
@@ -50,8 +86,9 @@ class Property extends Frontend_Controller {
     public function search()
     {            
         $this->data_to_header['title']="Search";
-        $this->data_to_header['active_menu']="property";
+        $this->data_to_header['active_menu']="property";        
         
+        $this->data_to_view["prop_list"] = $this->property_model->get_property_list(["search"=>$this->input->post('ss')]);         
 
         $this->load->view($this->header_url, $this->data_to_header);
         $this->load->view('search', $this->data_to_view);
@@ -65,8 +102,8 @@ class Property extends Frontend_Controller {
         $this->data_to_header['title']="Detail";
         $this->data_to_header['active_menu']="property";        
         
-        $lp_params['count']=3;
-        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_params, TRUE);
+        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
+        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
         $cf_params=[];
         $this->data_to_view['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
         

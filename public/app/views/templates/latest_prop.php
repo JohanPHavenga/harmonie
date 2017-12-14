@@ -3,79 +3,31 @@
 </div><!-- /.title -->
 
 <div class="content">
-    <div class="property">
-        <div class="image">
-            <a href="detail.html"></a>
-            <img src="<?= base_url("assets/img/tmp/property-small-4.png");?>" alt="">
-        </div><!-- /.image -->
-
-        <div class="wrapper">
-            <div class="title">
-                <h3>
-                    <a href="detail.html">160 10th Street</a>
-                </h3>
-            </div><!-- /.title -->
-            <div class="location">Hermanus</div><!-- /.location -->
-            <div class="price">R 2 100</div><!-- /.price -->
-        </div><!-- /.wrapper -->
-    </div><!-- /.property -->
-
-    <div class="property">
-        <div class="image">
-            <a href="detail.html"></a>
-            <img src="<?= base_url("assets/img/tmp/property-small-5.png");?>" alt="">
-        </div><!-- /.image -->
-
-        <div class="wrapper">
-            <div class="title">
-                <h3>
-                    <a href="detail.html">160 10th Street</a>
-                </h3>
-            </div><!-- /.title -->
-            <div class="location">Hermanus</div><!-- /.location -->
-            <div class="price">R 2 100</div><!-- /.price -->
-        </div><!-- /.wrapper -->
-    </div><!-- /.property -->
-
-    <div class="property">
-        <div class="image">
-            <a href="detail.html"></a>
-            <img src="<?= base_url("assets/img/tmp/property-small-6.png");?>" alt="">
-        </div><!-- /.image -->
-
-        <div class="wrapper">
-            <div class="title">
-                <h3>
-                    <a href="detail.html">160 10th Street</a>
-                </h3>
-            </div><!-- /.title -->
-            <div class="location">Hermanus</div><!-- /.location -->
-            <div class="price">R 2 100</div><!-- /.price -->
-        </div><!-- /.wrapper -->
-    </div><!-- /.property -->
-    
     <?php
-        if ($count!=3) {
-    ?>
+        foreach ($latest_properties as $property_id=>$property) 
+        {
+            ?>
+            <div class="property">
+                <div class="image">
+                    <a href="<?=base_url("property/detail/".$property['property_code']."");?>"></a>
+                    <img src="<?=base_url("photos/".$property['property_code']."/".$property['property_img']);?>" alt="" style="width: 100px; height: 74px;">
+                </div><!-- /.image -->
 
-    <div class="property">
-        <div class="image">
-            <a href="detail.html"></a>
-            <img src="<?= base_url("assets/img/tmp/property-small-2.png");?>" alt="">
-        </div><!-- /.image -->
-
-        <div class="wrapper">
-            <div class="title">
-                <h3>
-                    <a href="detail.html">160 10th Street</a>
-                </h3>
-            </div><!-- /.title -->
-            <div class="location">Hermanus</div><!-- /.location -->
-            <div class="price">R 2 100</div><!-- /.price -->
-        </div><!-- /.wrapper -->
-    </div><!-- /.property -->
-    
-    <?php
+                <div class="wrapper">
+                    <div class="title">
+                        <h3>
+                            <a href="<?=base_url("property/detail/".$property['property_code']."");?>"><?=$property['property_code'];?></a>
+                        </h3>
+                    </div><!-- /.title -->
+                    <div class="location"><?=$property['location_name'];?></div><!-- /.location -->
+                    <div class="price">from <?= fdisplayCurrency($property['property_rate_low']); ?></div><!-- /.price -->
+                </div><!-- /.wrapper -->
+            </div><!-- /.property -->
+            <?php
         }
     ?>
 </div><!-- /.content -->
+
+<?php
+//    wts($latest_properties);
+?>

@@ -8,8 +8,8 @@ class Contact extends Frontend_Controller {
             $this->data_to_header['title']="Contact Us";
             $this->data_to_header['active_menu']="contact";
             
-            $lp_params['count']=4;
-            $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_params, TRUE);
+            $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
+            $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
             
             $cf_params=[];
             $this->data_to_view['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
