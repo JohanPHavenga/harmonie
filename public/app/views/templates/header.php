@@ -152,7 +152,7 @@ if (isset($meta_description)) {
                                                 <li><a href="<?=base_url('property/all');?>">View all properties</a></li>
                                                 <li><a href="<?=base_url('property/houses');?>">Houses to let</a></li>
                                                 <li><a href="<?=base_url('property/apartments');?>">Apartments to let</a></li>
-                                                <li><a href="<?=base_url('property/list-my-property');?>">List your property</a></li>
+                                                <!--<li><a href="<?=base_url('property/list-my-property');?>">List your property</a></li>-->
                                             </ul>
                                         </li>
                                         </li>

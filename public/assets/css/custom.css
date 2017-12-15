@@ -80,3 +80,26 @@ div.control-group-inline
 {
     display: inline;
 }
+
+form.contact-form .three
+{
+    float: left;
+    width: 30%;
+}
+
+
+form.contact-form input[type="email"],
+form.contact-form input[type="date"]
+{
+    box-sizing: border-box;
+    width: 100%;
+}
+form.contact-form input[type="email"],
+form.contact-form input[type="date"]
+{
+    height: 40px;
+}
+
+.alert p {
+    margin:0;
+}

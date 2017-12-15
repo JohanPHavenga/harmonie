@@ -35,6 +35,8 @@ class Home extends Frontend_Controller {
             $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
             $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
             
+            $this->data_to_footer['scripts_to_load']=array("assets/scripts/home.js",);
+            
             $this->load->view($this->header_url, $this->data_to_header);
             $this->load->view('home', $this->data_to_view);
             $this->load->view($this->footer_url, $this->data_to_footer);

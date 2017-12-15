@@ -37,7 +37,7 @@ class Property_model extends CI_Model {
     {           
         // ALL properties
         if (isset($params['all_prop'])) {
-            $this->db->order_by('properties.updated_date');
+            $this->db->order_by('properties.updated_date',"desc");
         }
         // ALL properties incl unpublished
         if (!isset($params['include_unpublished'])) {
@@ -52,7 +52,7 @@ class Property_model extends CI_Model {
         // LATEST properties
         if (isset($params['latest'])) {
             $this->db->limit($params['latest']);   
-            $this->db->order_by('properties.created_date');
+            $this->db->order_by('properties.created_date',"desc");
         }        
         
         // search
@@ -67,8 +67,10 @@ class Property_model extends CI_Model {
         $this->db->select("*");
         $this->db->from("properties");
             $this->db->join('locations', 'properties.location_id=locations.location_id', 'left');
-            $this->db->join('types', 'types.type_id=types.type_id', 'left');                   
+            $this->db->join('types', 'properties.type_id=types.type_id', 'left');    
         
+                
+            
         $query = $this->db->get();
         
 

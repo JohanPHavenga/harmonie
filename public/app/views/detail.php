@@ -32,7 +32,66 @@
             </div>
             <div class="sidebar span3">
                 <div class="widget contact">
-                    <?= $contact_form; ?>
+                    <div class="title">
+                        <h2 class="block-title">Enquiry</h2>
+                    </div><!-- /.title -->
+                    <div class="content">
+                        <?php
+                            echo form_open("/contact/mailer/detail");
+                            //  Name
+                            echo "<div class='control-group'>";
+                            echo form_label('Name <span class="form-required" title="This field is required.">*</span>', 'inputContactName');
+                            echo form_input([
+                                'name'      => 'inputContactName',
+                                'id'        => 'inputContactName',
+                                'required'  => '',
+                            ]);
+                            echo "</div>";
+
+                            //  Email
+                            echo "<div class='control-group'>";
+                            echo form_label('Email <span class="form-required" title="This field is required.">*</span>', 'inputContactEmail');
+                            echo form_input([
+                                'name'      => 'inputContactEmail',
+                                'id'        => 'inputContactEmail',
+                                'type'      => "email",
+                                'required'  => '',
+                            ]);
+                            echo "</div>";  
+                            
+                            // Message
+                            echo "<div class='control-group'>";
+                            echo form_label('Message <span class="form-required" title="This field is required.">*</span>', 'inputContactMessage');
+                            echo form_textarea([
+                                    'name'      => 'inputContactMessage',
+                                    'id'        => 'inputContactMessage',
+                                    'required'  => '',
+                                    'style'     => 'height: 222px;',
+                                ]);
+                            echo "</div>";
+                            
+                            //  Sleeps
+                            echo form_input([
+                                'name'      => 'inputSleeps',
+                                'value'     => $property_data['property_sleeps'],
+                                'type'      => 'hidden',
+                                'required'  => '',
+                            ]);
+                            //  ProprCode
+                            echo form_input([
+                                'name'      => 'inputPropCode',
+                                'value'     => $prop_code,
+                                'type'      => 'hidden',
+                                'required'  => '',
+                            ]);
+                            
+                            echo '<div class="form-actions">';
+                            echo '<input type="submit" class="btn btn-primary arrow-right" value="Send">';
+                            echo '</div>';
+
+                        echo form_close();
+                        ?>
+                    </div>
                 </div><!-- /.widget -->
                 <div class="widget properties last">
                     <?= $latest_prop; ?>
@@ -62,10 +121,16 @@
                                 <td>LOW SEASON PRICE:</td>
                                 <td><?= fdisplayCurrency($property_data['property_rate_low']); ?></td>
                             </tr>
+                            <?php
+                            if ($property_data['property_rate_med']>0) {
+                            ?>
                             <tr>
                                 <td>MID SEASON PRICE:</td>
                                 <td><?= fdisplayCurrency($property_data['property_rate_med']); ?></td>
                             </tr>
+                            <?php
+                            }
+                            ?>
                             <tr>
                                 <td>HIGH SEASON PRICE:</td>
                                 <td><?= fdisplayCurrency($property_data['property_rate_high']); ?></td>

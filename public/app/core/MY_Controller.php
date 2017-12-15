@@ -98,8 +98,10 @@ class Admin_Controller extends MY_Controller {
             $id = array_shift($entity);
 
             foreach ($entity as $key => $value) {
-                if (empty($value)) { $value=FALSE; }
-                $user_data[$key]=$value;
+//                if (empty($value)) { $value=FALSE; }
+                if (!empty($value)) {
+                    $user_data[$key]=$value;
+                }
             }
 
             // get ID - set action

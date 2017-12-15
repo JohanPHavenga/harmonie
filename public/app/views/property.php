@@ -74,7 +74,7 @@
                         echo form_dropdown('property_bedrooms', $beds_dropdown, @$filter['property_bedrooms'], ["id" => "inputBeds"]);
                         echo "</div>";
 
-                        //  Beds
+                        //  Sleeps
                         echo "<div class='baths control-group'>";
                         echo form_label('Sleeps', 'inputSleeps');
                         echo form_dropdown('property_sleeps', $sleeps_dropdown, @$filter['property_sleeps'], ["id" => "inputSleeps"]);
@@ -101,7 +101,6 @@
 //                            'value' => set_value('inputPriceFrom', @$filter['inputPriceFrom']),
                             'value' => set_value('inputPriceFrom', 0),
                         ]);
-
                         echo '</div>';
 
                         // Price To
@@ -113,7 +112,6 @@
 //                            'value' => set_value('inputPriceTo', @$filter['inputPriceTo']),
                             'value' => set_value('inputPriceTo', 10000),
                         ]);
-
                         echo '</div>';
 
                         echo '<div class="price-value"><span class="from"></span> - <span class="to"></span></div>';

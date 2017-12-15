@@ -18,3 +18,7 @@ application/logs/*
 
 .DS_STORE
 .vagrant
+
+master_photos
+*.log
+*.csv

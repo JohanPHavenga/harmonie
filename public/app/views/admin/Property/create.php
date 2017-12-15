@@ -194,7 +194,7 @@
                 // BEGIN REGS
                 echo '<div class="col-md-6">';
                 
-                    // Main Image
+                    // Summary
                     echo "<div class='form-group'>";
                     echo form_label('Short Description  <span class="compulsary">*</span>', 'property_summary');
                     echo form_input([

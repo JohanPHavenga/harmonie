@@ -56,7 +56,52 @@
                 </div><!-- /.widget -->
 
                 <div class="widget span3">
-                    <?= $contact_form; ?>
+                    <div class="title">
+                        <h2 class="block-title">Enquiry</h2>
+                    </div><!-- /.title -->
+                    <div class="content">
+                        <?php
+                            echo form_open("/contact/mailer/footer");
+                            //  Name
+                            echo "<div class='control-group'>";
+                            echo form_label('Name <span class="form-required" title="This field is required.">*</span>', 'inputContactName');
+                            echo form_input([
+                                'name'      => 'inputContactName',
+                                'id'        => 'inputContactName',
+                                'required'  => '',
+                            ]);
+                            echo "</div>";
+
+                            //  Email
+                            echo "<div class='control-group'>";
+                            echo form_label('Email <span class="form-required" title="This field is required.">*</span>', 'inputContactEmail');
+                            echo form_input([
+                                'name'      => 'inputContactEmail',
+                                'id'        => 'inputContactEmail',
+                                'type'      => "email",
+                                'required'  => '',
+                            ]);
+                            echo "</div>";  
+                            
+                            // Message
+                            echo "<div class='control-group'>";
+                            echo form_label('Message <span class="form-required" title="This field is required.">*</span>', 'inputContactMessage');
+                            echo '<div class="controls">';
+                            echo form_textarea([
+                                    'name'          => 'inputContactMessage',
+                                    'id'            => 'inputContactMessage',
+                                    'required'  => '',
+                                ]);
+                            echo "</div></div>";
+                            
+                            echo '<div class="form-actions">';
+                            echo '<input type="submit" class="btn btn-primary arrow-right" value="Send">';
+                            echo '</div>';
+
+                        echo form_close();
+                        ?>
+                    </div>
+                   
                 </div><!-- /.widget -->
             </div><!-- /.row -->
         </div><!-- /#footer-top-inner -->
@@ -99,8 +144,16 @@
 <script type="text/javascript" src="<?= base_url('assets/libraries/iosslider/_src/jquery.iosslider.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/realia.js');?>"></script>
-
 <?php
+// load extra JS files from controller
+    if (isset($js_to_load)) :
+        foreach ($js_to_load as $row):
+            $js_link=base_url($row);
+            echo "<script src='$js_link' type='text/javascript'></script> ";
+        endforeach;
+    endif;
+    
+    
     // load script files from controller
         if (isset($scripts_to_load)) :
             foreach ($scripts_to_load as $row):
