@@ -15,7 +15,9 @@ class Property_model extends CI_Model {
         $data[] = "Any";
         $data[2] = "2";
         $data[4] = "4";
+        $data[5] = "5";
         $data[6] = "6";
+        $data[7] = "7";
         $data[8] = "8";
         $data[10] = "10";
         $data[12] = "12+";

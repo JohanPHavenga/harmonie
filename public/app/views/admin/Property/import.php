@@ -63,7 +63,7 @@
                     foreach ($property_list as $property_id=>$property) {
                         $data[$k]="<b>".$property['property_code']."</b>";
                         $data[$k].=" - Sleeps ".$property['property_sleeps'];
-                        $data[$k].=" - Featured ".$property['property_isfeatured'];
+//                        $data[$k].=" - Featured ".@$property['property_isfeatured'];
                         $data[$k].="<br>".$property['property_address'];
                         
                         $this->table->add_row($data);

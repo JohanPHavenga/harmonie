@@ -100,7 +100,7 @@
                     <?php
                         // cycle through featured propertyes
                         // this should only be 6
-                        foreach ($featured_properties as $property_id=>$property) {
+                        foreach ($all_properties as $property_id=>$property) {
                             ?>
                             <li>
                                 <div class="image">

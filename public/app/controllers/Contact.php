@@ -51,6 +51,7 @@ class Contact extends Frontend_Controller {
         // set validation rules
         $this->form_validation->set_rules('inputContactName', 'Name', 'required');
         $this->form_validation->set_rules('inputContactEmail', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('inputContactPhone', 'Phone Number', 'required');
         $this->form_validation->set_rules('inputSleeps', 'Number of guests', 'required');
         $this->form_validation->set_rules('inputDateFrom', 'Date From', 'required');
         $this->form_validation->set_rules('inputDateTo', 'Date To', 'required');
@@ -89,15 +90,27 @@ class Contact extends Frontend_Controller {
             $this->email->initialize($config);
 
             $this->email->from($this->input->post('inputContactEmail'), $this->input->post('inputContactName'));
-            $this->email->to('johan.havenga@gmail.com');
-            // $this->email->bcc('them@their-example.com');
+            // TO adres
+            $this->email->to('info@harmonieprop.co.za');
+            // moet uithaal
+            $this->email->bcc('johan.havenga@gmail.com');
 
-            $this->email->subject('Test');
+            if ($this->input->post('inputPropCode')) {
+                $this->email->subject('Website Query: '.$this->input->post('inputPropCode').' #'.time());
+            } else {
+                $this->email->subject('General website query #'.time());
+                
+            }
 
             $msg_arr[]="Name: ".$this->input->post('inputContactName');
+            $msg_arr[]="Phone Number: ".$this->input->post('inputContactPhone');
             $msg_arr[]="Email: ".$this->input->post('inputContactEmail');
-            $msg_arr[]="Property equiring about: ".$this->input->post('inputPropCode');
-            $msg_arr[]="Number of Guests: ".$this->input->post('inputSleeps');
+            if ($this->input->post('inputPropCode')) {
+                $msg_arr[]="Property equiring about: ".$this->input->post('inputPropCode');
+            }
+            if ($this->input->post('inputPropCode') > 0) {
+                $msg_arr[]="Number of Guests: ".$this->input->post('inputSleeps');
+            }
             $msg_arr[]="Date From: ".$this->input->post('inputDateFrom');
             $msg_arr[]="Date To: ".$this->input->post('inputDateTo');
             $msg_arr[]="Message: ".$this->input->post('inputContactMessage');

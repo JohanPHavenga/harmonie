@@ -42,13 +42,13 @@
                         
                         if ($data_entry['property_isfeatured']) 
                         {
-                            $data_entry['property_code']=flableFeatured($data_entry['property_code']);
+                            $data_entry['property_code_search']=flableFeatured($data_entry['property_code_search']);
                         }
                         
                         
                         $this->table->add_row(
                                     $data_entry['property_id'],
-                                    "<a href='$edit_uri'>".$data_entry['property_code']."</a>", 
+                                    "<a href='$edit_uri'>".$data_entry['property_code_search']."</a>", 
                                     flableStatus($data_entry['property_ispublished']),
                                     fdisplayCurrency($data_entry['property_rate_high']), 
                                     fdisplayCurrency($data_entry['property_rate_low']), 

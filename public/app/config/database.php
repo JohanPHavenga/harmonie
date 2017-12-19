@@ -95,16 +95,16 @@ $db['local'] = array(
 	'save_queries' => TRUE
 );
 
-$db['server'] = array(
-	'dsn'	=> '',
+$db['server'] = array(    
+        'dsn'	=> '',
         'hostname' => 'localhost',
-	'username' => 'roadrjsx_coyote',
-	'password' => 'gSX$Esn-z3;$',
-	'database' => 'roadrjsx_coyote',
+	'username' => 'harmomgdrq_3_w',
+	'password' => 'ZI4Ze7p9pF1S6o35V07y',
+	'database' => 'harmomgdrq_db3',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => FALSE,
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
@@ -114,5 +114,5 @@ $db['server'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => FALSE
 );

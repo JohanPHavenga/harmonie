@@ -66,7 +66,7 @@
                 
                     echo "<div class='row'>";                    
                         //  Name
-                        echo "<div class='control-group span4'>";
+                        echo "<div class='control-group span5'>";
                         echo form_label('Name <span class="form-required" title="This field is required.">*</span>', 'inputContactName');
                         echo form_input([
                             'name'      => 'inputContactName',
@@ -76,6 +76,21 @@
                         ]);
                         echo "</div>";
 
+                        //  Phone number
+                        echo "<div class='control-group span4'>";
+                        echo form_label('Phone Number <span class="form-required" title="This field is required.">*</span>', 'inputContactPhone');
+                        echo form_input([
+                            'name'      => 'inputContactPhone',
+                            'id'        => 'inputContactPhone',
+                            'value'     => set_value('inputContactPhone', @$post['inputContactPhone']),
+                            'required'  => '',
+                        ]);
+                        echo "</div>";
+                        
+                        
+                    echo "</div>"; // row
+                    
+                    echo "<div class='row'>";                    
                         //  Email
                         echo "<div class='control-group span5'>";
                         echo form_label('Email <span class="form-required" title="This field is required.">*</span>', 'inputContactEmail');
@@ -87,18 +102,29 @@
                             'required'  => '',
                         ]);
                         echo "</div>";  
+
+                        //  Propertty code
+                        echo "<div class='span4 control-group'>";
+                        echo form_label('Property equiring about?', 'inputPropCode');
+                        echo form_input([
+                            'name'          => 'inputPropCode',
+                            'id'            => 'inputPropCode',
+                            'placeholder'   => "Example: V15",
+                            'value'     => set_value('inputPropCode', @$post['inputPropCode']),
+                        ]);
+                        echo "</div>"; 
                     echo "</div>"; // row
                         
 
                     echo "<div class='row'>";    
                         //  Sleeps
-                        echo "<div class='span2 control-group'>";
+                        echo "<div class='span3 control-group'>";
                         echo form_label('Number of guests  <span class="form-required" title="This field is required.">*</span>', 'inputSleeps');
                         echo form_dropdown('inputSleeps', $sleeps_dropdown, @$post['inputSleeps'], ["id" => "inputSleeps","style"=>"width: 100%","required"=>""]);
                         echo "</div>";
 
                         //  Dates
-                        echo "<div class='span2 control-group'>";                    
+                        echo "<div class='span3 control-group'>";                    
                         echo form_label('Date From <span class="form-required" title="This field is required.">*</span>', 'inputDateFrom');
                         echo form_input([
                             'name'          => 'inputDateFrom',
@@ -110,7 +136,7 @@
                         ]);                    
                         echo "</div>";
 
-                        echo "<div class='span2 control-group'>";   
+                        echo "<div class='span3 control-group'>";   
                         echo form_label('Date To <span class="form-required" title="This field is required.">*</span>', 'inputDateTo');
                         echo form_input([
                             'name'          => 'inputDateTo',
@@ -122,16 +148,7 @@
                         ]);                    
                         echo "</div>";
                         
-                        //  Propertty code
-                        echo "<div class='span3 control-group'>";
-                        echo form_label('Property equiring about?', 'inputPropCode');
-                        echo form_input([
-                            'name'          => 'inputPropCode',
-                            'id'            => 'inputPropCode',
-                            'placeholder'   => "Example: V15",
-                            'value'     => set_value('inputPropCode', @$post['inputPropCode']),
-                        ]);
-                        echo "</div>"; 
+                       
                     echo "</div>"; // row
                         
                     
