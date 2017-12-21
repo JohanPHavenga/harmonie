@@ -139,7 +139,7 @@ class Property extends Frontend_Controller {
                             div: '#property-map',
                             lat: $lat,
                             lng: $long,
-                            zoom: 14,
+                            zoom: 15,
                             scrollwheel: false
                             });
 
