@@ -118,14 +118,14 @@
                                 <td><?= $property_data['property_sleeps']; ?></td>
                             </tr>
                             <tr>
-                                <td>LOW SEASON PRICE:</td>
+                                <td>LOW SEASON:</td>
                                 <td><?= fdisplayCurrency($property_data['property_rate_low']); ?></td>
                             </tr>
                             <?php
                             if ($property_data['property_rate_med']>0) {
                             ?>
                             <tr>
-                                <td>MID SEASON PRICE:</td>
+                                <td>MID SEASON:</td>
                                 <td><?= fdisplayCurrency($property_data['property_rate_med']); ?></td>
                             </tr>
                             <?php

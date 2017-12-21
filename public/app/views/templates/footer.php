@@ -8,7 +8,36 @@
         <div id="footer-top-inner" class="container">
             <div class="row">
                 <div class="widget properties span3">
-                    <?=$latest_prop;?>
+                    <div class="title">
+                    <h2>Latest Properties</h2>
+                </div><!-- /.title -->
+
+                <div class="content">
+                    <?php
+                        foreach ($latest_properties_footer as $property_id=>$property) 
+                        {
+                            ?>
+                            <div class="property">
+                                <div class="image">
+                                    <a href="<?=base_url("property/detail/".$property['property_code']."");?>"></a>
+                                    <img src="<?=base_url("photos/".$property['property_code']."/".$property['property_img']);?>" alt="" style="width: 100px; height: 74px;">
+                                </div><!-- /.image -->
+
+                                <div class="wrapper">
+                                    <div class="title">
+                                        <h3>
+                                            <a href="<?=base_url("property/detail/".$property['property_code']."");?>"><?=$property['property_code'];?></a>
+                                        </h3>
+                                    </div><!-- /.title -->
+                                    <div class="location"><?=$property['location_name'];?></div><!-- /.location -->
+                                    <div class="price">from <?= fdisplayCurrency($property['property_rate_low']); ?></div><!-- /.price -->
+                                </div><!-- /.wrapper -->
+                            </div><!-- /.property -->
+                            <?php
+                        }
+                    ?>
+                </div><!-- /.content -->
+
                 </div><!-- /.properties-small -->
 
                 <div class="widget span3">
@@ -144,6 +173,8 @@
 <script type="text/javascript" src="<?= base_url('assets/libraries/iosslider/_src/jquery.iosslider.min.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.js');?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/realia.js');?>"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery.fancybox.min.js');?>"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/jquery.justifiedGallery.min.js');?>"></script>
 <?php
 // load extra JS files from controller
     if (isset($js_to_load)) :
@@ -174,5 +205,12 @@
             echo "</script>";
         }
     ?>
+    <script>
+    $("#propgallery").justifiedGallery({                
+                margins: 8,
+                rowHeight: 130,
+                randomize: true
+            });
+    </script>
 </body>
 </html>

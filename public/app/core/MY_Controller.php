@@ -202,7 +202,7 @@ class Frontend_Controller extends MY_Controller {
         
         $this->load->model('property_model');
         
-        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
+        $lp_data['latest_properties_footer']=$this->property_model->get_property_list(["latest"=>3]);            
         $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
         
         $cf_params=[];

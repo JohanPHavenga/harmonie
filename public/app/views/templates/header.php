@@ -43,7 +43,9 @@ if (isset($meta_description)) {
         <link rel="stylesheet" href="<?= base_url('assets/libraries/chosen/chosen.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/libraries/bootstrap-fileupload/bootstrap-fileupload.css'); ?>" type="text/css">
         <link rel="stylesheet" href="<?= base_url('assets/libraries/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css'); ?>" type="text/css">
-        <link rel="stylesheet" href="<?= base_url('assets/css/theme.css'); ?>" type="text/css" id="color-variant-default">
+        <link rel="stylesheet" href="<?= base_url('assets/css/theme.css'); ?>" type="text/css" id="color-variant-default">        
+        <link rel="stylesheet" href="<?= base_url('assets/css/jquery.fancybox.min.css'); ?>" type="text/css" >  
+        <link rel="stylesheet" href="<?= base_url('assets/css/justifiedGallery.min.css'); ?>" type="text/css" >  
         <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>" type="text/css" >        
         <link rel="stylesheet" href="#" type="text/css" id="color-variant">
 

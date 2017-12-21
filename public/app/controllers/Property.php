@@ -95,14 +95,14 @@ class Property extends Frontend_Controller {
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
     
-    public function detail($prop_code)
+    public function detail($prop_code, $new=null)
     {            
-        $this->load->helper('file');
+        $this->load->helper('file');        
         
         $this->data_to_header['title']="Detail";
         $this->data_to_header['active_menu']="property";        
         
-        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>3]);            
+        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>2]);            
         $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
         $cf_params=[];
         $this->data_to_view['contact_form'] = $this->load->view('templates/contact_form', $cf_params, TRUE);
@@ -168,7 +168,11 @@ class Property extends Frontend_Controller {
         
         
         $this->load->view($this->header_url, $this->data_to_header);
-        $this->load->view('detail', $this->data_to_view);
+        if ($new) {
+            $this->load->view('detail_new', $this->data_to_view);
+        } else {
+            $this->load->view('detail', $this->data_to_view);
+        }
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
 }

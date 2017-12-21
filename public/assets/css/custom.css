@@ -26,7 +26,7 @@
 }
 
 h4.page-header {
-    margin: 0;
+    margin: 0 0 12px;
     font-weight: 600;
 }
 
@@ -34,25 +34,23 @@ h4.page-header {
    max-width: 870px;
 }
 
-.property-detail .overview {
-    margin-right: 0;
-}
 
-.property-detail .overview table.property-details {
-    border-color: #002457;
+.prop-summary table {
+    width: 100%;
 }
-.property-detail .overview table.property-details.table-bordered th, 
-.property-detail .overview table.property-details.table-bordered td {
-    border-color: #002457;
+.prop-summary table.table-bordered th, 
+.prop-summary table.table-bordered td {
+    font-size: 1.2em;
+    padding: 8px 10px;
 }
-.property-detail .overview table.property-details th {
+.prop-summary table th {
     padding: 5px 7px;
     text-transform: uppercase;
     background: #002457;
     color: #fff;
 }
 
-table.property-details tr > td:last-child {
+.prop-summary table tr > td:last-child {
     font-weight: bold;
 }
 
@@ -102,4 +100,11 @@ form.contact-form input[type="date"]
 
 .alert p {
     margin:0;
+}
+
+.property-detail ul {
+    list-style: circle;
+}
+.property-detail ul li {
+    line-height: 1.6em;
 }
