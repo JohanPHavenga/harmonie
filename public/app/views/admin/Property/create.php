@@ -126,7 +126,6 @@
                             'id'            => 'property_gps',
                             'value'         => set_value('property_gps', @$property_detail['property_gps']),
                             'class'         => 'form-control input-large',
-                            'required'      => '',
                         ]);
 
                     echo '</div>'; 
@@ -139,7 +138,6 @@
                             'id'            => 'property_img',
                             'value'         => set_value('property_img', @$property_detail['property_img']),
                             'class'         => 'form-control input-large',
-                            'required'      => '',
                         ]);
 
                     echo '</div>'; 

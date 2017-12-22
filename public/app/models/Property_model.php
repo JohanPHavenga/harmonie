@@ -200,8 +200,15 @@ class Property_model extends CI_Model {
             
             if ($this->input->post('property_ispublished')) { $is_published=TRUE; }
             if ($this->input->post('property_isfeatured')) { $is_featured=TRUE; }
+            
+            // sit 0 voor getalle onder 10 in kode
+            $code_arr = preg_split("/(,?\s+)|((?<=[a-z])(?=\d))|((?<=\d)(?=[a-z]))/i", $this->input->post('property_code'));
+            if ($code_arr[1]<10) { $code_arr[1]="0".$code_arr[1]; }
+            $code_search=implode("", $code_arr);
+            
             $property_data = array(
                       'property_code' => $this->input->post('property_code'),
+                      'property_code_search' => $code_search,
                       'property_address' => $this->input->post('property_address'),
                       'property_sleeps' => $this->input->post('property_sleeps'),
                       'property_bathrooms' => $this->input->post('property_bathrooms'),
