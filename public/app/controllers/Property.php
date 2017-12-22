@@ -95,7 +95,7 @@ class Property extends Frontend_Controller {
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
     
-    public function detail($prop_code, $new=null)
+    public function detail($prop_code)
     {            
         $this->load->helper('file');        
         
@@ -114,9 +114,12 @@ class Property extends Frontend_Controller {
         // get photos
         $photos_arr = get_filenames("photos/".$prop_code);
         // remove main image
-        $key = array_search($this->data_to_view["property_data"]['property_img'], $photos_arr);
-        unset($photos_arr[$key]);
+        if ($photos_arr) {
+            $key = array_search($this->data_to_view["property_data"]['property_img'], $photos_arr);
+            unset($photos_arr[$key]);
+        }
         $this->data_to_view["photos"]=$photos_arr;
+        
         
         
         // scripts to load
@@ -128,8 +131,10 @@ class Property extends Frontend_Controller {
         
         // get lat and long
         $gps_arr= explode(",", $this->data_to_view['property_data']['property_gps']);
-        $lat=$gps_arr[0];
-        $long=$gps_arr[1];
+        if (count($gps_arr)>1) {
+            $lat=$gps_arr[0];
+            $long=$gps_arr[1];
+        
         // script to add gmaps to the page
         $this->data_to_footer['scripts_to_display'][]="            
             var PageContact = function() {
@@ -164,15 +169,11 @@ class Property extends Frontend_Controller {
 
             $(document).ready(function() {
                 PageContact.init();
-            });";
-        
+            });";        
+        }
         
         $this->load->view($this->header_url, $this->data_to_header);
-        if ($new) {
-            $this->load->view('detail_new', $this->data_to_view);
-        } else {
-            $this->load->view('detail', $this->data_to_view);
-        }
+        $this->load->view('detail', $this->data_to_view);
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
 }

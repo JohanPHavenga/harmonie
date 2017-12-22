@@ -11,10 +11,12 @@
                         </a>
                         <div id="propgallery">
                             <?php
-                            foreach ($photos as $photo) {
-                                echo '<a data-fancybox="gallery" href="' . base_url("photos/" . $prop_code . "/" . $photo) . '">';
-                                echo '<img src="' . base_url("photos/" . $prop_code . "/" . $photo) . '" alt="" style="max-height: 150px;">';
-                                echo '</a>';
+                            if ($photos) {
+                                foreach ($photos as $photo) {
+                                    echo '<a data-fancybox="gallery" href="' . base_url("photos/" . $prop_code . "/" . $photo) . '">';
+                                    echo '<img src="' . base_url("photos/" . $prop_code . "/" . $photo) . '" alt="" style="max-height: 150px;">';
+                                    echo '</a>';
+                                }
                             }
                             ?>
                         </div>

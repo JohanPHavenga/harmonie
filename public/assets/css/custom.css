@@ -10,6 +10,7 @@
 #header-wrapper #header #header-inner .navbar .navbar-inner .site-name .brand
 {
     color: #002457;
+    font-family: Open Sans Condensed, sans-serif;
 }
 
 .navigation-wrapper .navigation .nav li .nolink:hover, 

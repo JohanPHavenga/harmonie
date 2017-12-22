@@ -37,22 +37,7 @@
                             echo "<div class='form-group'>";
                             echo form_label('Sleeps <span class="compulsary">*</span>', 'property_sleeps');
                             echo form_dropdown('property_sleeps', $sleeps_dropdown, @$property_detail['property_sleeps'], ["id"=>"property_sleeps","class"=>"form-control input-small"]);        
-                            echo "</div>";
-                            
-
-                            // Bathrooms
-                            echo "<div class='form-group'>";
-                            echo form_label('Bathrooms  <span class="compulsary">*</span>', 'property_bathrooms');
-                            echo form_input([
-                                    'name'          => 'property_bathrooms',
-                                    'id'            => 'property_bathrooms',
-                                    'type'          => 'number',
-                                    'value'         => set_value('property_bathrooms', @$property_detail['property_bathrooms']),
-                                    'class'         => 'form-control input-small',
-                                    'required'      => '',
-                                ]);
-
-                            echo '</div>';  
+                            echo "</div>";                            
 
                             // Bedrooms
                             echo "<div class='form-group'>";
@@ -67,6 +52,20 @@
                                 ]);
 
                             echo '</div>';  
+                            
+                            // Bathrooms
+                            echo "<div class='form-group'>";
+                            echo form_label('Bathrooms  <span class="compulsary">*</span>', 'property_bathrooms');
+                            echo form_input([
+                                    'name'          => 'property_bathrooms',
+                                    'id'            => 'property_bathrooms',
+                                    'type'          => 'number',
+                                    'value'         => set_value('property_bathrooms', @$property_detail['property_bathrooms']),
+                                    'class'         => 'form-control input-small',
+                                    'required'      => '',
+                                ]);
+
+                            echo '</div>';                              
 
                         echo '</div>'; 
 
@@ -120,7 +119,7 @@
 
                     // GPS
                     echo "<div class='form-group'>";
-                    echo form_label('GPS  <span class="compulsary">*</span>', 'property_gps');
+                    echo form_label('GPS', 'property_gps');
                     echo form_input([
                             'name'          => 'property_gps',
                             'id'            => 'property_gps',
@@ -207,7 +206,7 @@
                     
                     // Property Overview
                     echo "<div class='form-group'>";
-                    echo form_label('Overview  <span class="compulsary">*</span>', 'property_overview');
+                    echo form_label('Overview', 'property_overview');
                     echo form_textarea([
                             'name'          => 'property_overview',
                             'id'            => 'property_overview',
@@ -218,7 +217,7 @@
                 
                     // Property Address
                     echo "<div class='form-group'>";
-                    echo form_label('Address  <span class="compulsary">*</span>', 'property_address');
+                    echo form_label('Address', 'property_address');
                     echo form_textarea([
                             'name'          => 'property_address',
                             'id'            => 'property_address',
