@@ -79,7 +79,7 @@
                             <li class="first leaf"><a href="<?=base_url();?>">Home</a></li>
                             <li class="leaf"><a href="<?=base_url('about');?>">About us</a></li>
                             <li class="leaf"><a href="<?=base_url('contact');?>">Contact us</a></li>
-                            <li class="last leaf"><a href="<?=base_url('faq');?>">FAQ</a></li>
+                            <!--<li class="last leaf"><a href="<?=base_url('faq');?>">FAQ</a></li>-->
                         </ul>
                     </div><!-- /.content -->
                 </div><!-- /.widget -->

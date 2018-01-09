@@ -1,40 +1,42 @@
 <div class="container">
     <div id="main">
-        <div class="about-us">
-            <h2 class="page-header">About us</h2>
-
-            <div class="row">
-                <div class="content">
-                    <div class="member span4">
-                        <img src="<?= base_url(); ?>assets/img/photos/john-doe-original.png" alt="Ilanda Havenga">
-                        <h2>Ilanda Havenga</h2>
-                        <p>Co-Owner</p>
-                    </div><!-- /.member -->
-
-                    <div class="member span4">
-                        <img src="<?= base_url(); ?>assets/img/photos/emma-hearth-original.png" alt="Emma Hearth">
-                        <h2>Juan Greeff</h2>
-                        <p>Co-Owner</p>
-                    </div><!-- /.member -->
-
-                    <div class="member span4">
-                        <img src="<?= base_url(); ?>assets/img/photos/angie-blair-original.png" alt="Angie Blair">
-                        <h2>Brindie en haar Van</h2>
-                        <p>Mense rondry</p>
-                    </div><!-- /.member -->
-                </div><!-- /.content -->
-            </div><!-- /.row -->
-        </div><!-- /.about-us -->
-        <hr>
-
-        <div class="row">
+        <div class="about-us row">
             <div class="span6">
-                <h2>Our Story</h2>
-                <p>Morbi rhoncus, nisi eget molestie gravida, nunc turpis porttitor tortor, id sagittis eros magna sed arcu. In hac habitasse platea dictumst. Integer placerat gravida orci, in gravida massa dapibus nec. Nam commodo rhoncus urna, et imperdiet odio lacinia sodales. Morbi accumsan aliquet metus, ac malesuada quam rutrum et. Curabitur porttitor tincidunt lorem, id mollis dui fringilla sit amet. Mauris vitae risus nunc. Nunc pulvinar varius magna, sed scelerisque arcu varius vitae.</p>
-                <p>Donec lobortis tincidunt justo et rhoncus. Etiam ac ligula a diam consectetur commodo vitae non ipsum. Etiam viverra leo at nunc sollicitudin hendrerit. Sed feugiat massa ac nisl dictum tempus sed quis nulla. Vivamus aliquam venenatis porta.<br>
-                    Quisque eget velit dictum orci luctus lacinia. Donec eget augue non sem</p>
-                <p><a href="<?= base_url(); ?>contact" class="btn btn-primary">Contact us</a>
+                <h2 class="page-header">About us</h2>
+                <p>
+                    Harmonie Property Services is a <strong>Holiday rental and property management company</strong> that focuses on serving the needs of 
+                    holiday makers and property owners in Hermanus. We particularly focus on the <strong>rental of luxury apartments and holiday homes</strong>.</p>
+                <p>
+                    We provide valuable services by keeping our finger on property management, holiday requirements and keeping operating 
+                    expenses to a minimum.</p>
+                <p>
+                    Harmonie Property Services has built up a powerful portfolio of <a href="property/all" title="View properties">stunning properties</a> in Hermanus comprising of executive holiday homes 
+                    and apartments to cosy and casual holiday accommodation choices to suit every budget.</p>
+                <p>
+                    Our services maintain excellent levels which is exactly why tenants have been returning year after year to their same rentals, testimony 
+                    to excellent properties and the consistently <strong>outstanding levels of services</strong> provided by Harmonie Property Services.</p>
+                
+                <h2 class="page-header">Our Team</h2>
+
+                <p>
+                    Before taking over the ownership of Harmonie Property Services, we the owners, Juan and Ilanda Greeff boast long careers 
+                    in the Hospitality Industry on various levels which equip us with the qualities to provide and maintaining superior service levels.</p>
+                <p>
+                    We have an excellent support team. Our staff are trusted, reliable and form an integral part of the services we provide.</p>
+                
+                
+                <h2 class="page-header">Why Us?</h2>
+                <p>
+                    Our services are personal! We strive to establish great, long lasting relationships with guests and property owners alike. </p>
+                <p>
+                    We have an intense knowledge of Hermanus and it’s dynamics which enables us to enrich your dream holiday experience.</p>
+
+                
+                <p>&nbsp;</p>
+                <p>
+                    <a href="<?= base_url(); ?>contact" class="btn btn-primary">Contact us</a>
                 </p>
+                
             </div>
             <div class="span1"></div>
             <div class="span5">

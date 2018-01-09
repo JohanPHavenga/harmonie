@@ -78,9 +78,16 @@
                     </div><!-- /.title -->
 
                     <div class="content">
-                        <p>We offer <b>personalized service</b> in booking and managing properties blah blah blah etc and stuff.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p><a href="">More About Us</a>
+                        <p>
+                            Harmonie Property Services is a <strong>Holiday rental and property management company</strong> that focuses on serving the needs of 
+                            holiday makers and property owners in Hermanus. We particularly focus on the <strong>rental of luxury apartments and holiday homes</strong>.</p>
+                        <p>
+                            We provide valuable services by keeping our finger on property management, holiday requirements and keeping operating 
+                            expenses to a minimum.</p>
+                            
+                        </p>
+                        
+                        <p><a href="/about">More About Us</a>
                     </div><!-- /.content -->
                 </div><!-- /.our-agents -->
                 <div class="hidden-tablet">
@@ -124,9 +131,10 @@
                     ?>
                 </ul>
             </div><!-- /.content -->
-        </div><!-- /.carousel -->        
+        </div><!-- /.carousel -->    
+        
         <div class="features">
-            <h2 class="page-header">Why Harmonie Rental Properties?</h2>
+            <h2 class="page-header" style="margin-top: 30px;">Why Harmonie Rental Properties?</h2>
 
             <div class="row">
                 <div class="item span4">
@@ -137,7 +145,7 @@
 
                         <div class="text span3">
                             <h3>Personal Service</h3>
-                            <p>Hier kan jy nou mooi dingetjies sê van hoekom julle awesome is en beter is as ander maatskappye.</p>
+                            <p>We strive to establish great, long lasting relationships with guests and property owners alike.</p>
                         </div><!-- /.logo -->
                     </div><!-- /.row -->
                 </div><!-- /.item -->
@@ -150,7 +158,7 @@
 
                         <div class="text span3">
                             <h3>Local Knowledge</h3>
-                            <p>Realia looks great even on Retina and high-resoultion displays. Every graphic element is sharp and clean. No blurry images anymore!</p>
+                            <p>We have an intense knowledge of Hermanus and it's dynamics which enables us to enrich your dream holiday experience.</p>
                         </div><!-- /.logo -->
                     </div><!-- /.row -->
                 </div><!-- /.item -->
@@ -162,8 +170,8 @@
                         </div><!-- /.icon -->
 
                         <div class="text span3">
-                            <h3>Nog iets wat sin maak</h3>
-                            <p>Realia provides custom developed widgets to fulfil requirements of good real estate application.</p>
+                            <h3>Powerful Portfolio</h3>
+                            <p>We have built up a powerful portfolio of <a href="property/all" title="View properties">stunning properties</a> in Hermanus comprising of executive holiday homes and apartments.</p>
                         </div><!-- /.logo -->
                     </div><!-- /.row -->
                 </div><!-- /.item -->
@@ -219,23 +227,23 @@
 
             <div class="item span4">
                 <div class="gps decoration"></div>
-                <h2><a>Property rentals</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <h2><a>Holiday House Rentals</a></h2>
+                <p>View our powerful portfolio of houses up for rent in Hermanus</p>
+                <a href="property/houses" class="btn btn-primary">View Houses</a>
             </div><!-- /.item -->
 
             <div class="item span4">
                 <div class="key decoration"></div>
-                <h2><a>Property Management</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <h2><a>Apartment Rentals</a></h2>
+                <p>We have build up a portfolio of execute apartments in Hermanus central</p>
+                <a href="property/apartments" class="btn btn-primary">View Apartments</a>
             </div><!-- /.item -->
             
             <div class="item span4">
                 <div class="address decoration"></div>
                 <h2><a>List your property</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan dui ac nunc imperdiet rhoncus. Aenean vitae imperdiet lectus</p>
-                <a href="#" class="btn btn-primary">List Property</a>
+                <p>Want us to manage you property and rent it out for you? Click below to contact us.</p>
+                <a href="contact" class="btn btn-primary">Contact Us</a>
             </div><!-- /.item -->
         </div><!-- /.bottom-inner -->
     </div><!-- /.bottom -->

@@ -122,7 +122,7 @@ if (isset($meta_description)) {
                                                     </div><!-- /.site-phone -->
                                                 </div><!-- /.info -->
 
-                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="<?=base_url();?>property/all">View our properties</a>
+                                                <a class="btn btn-primary btn-large list-your-property arrow-right" href="<?=base_url();?>property/all">View all properties</a>
                                             </div><!-- /.row -->
                                         </div><!-- /.navbar-inner -->
                                     </div><!-- /.navbar -->
@@ -159,7 +159,7 @@ if (isset($meta_description)) {
                                         </li>
                                         </li>
                                         <li><a href="<?=base_url('about');?>" <?php if ($active_menu=="about") { echo "class='active'"; }?>>About Us</a></li>
-                                        <li><a href="<?=base_url('faq');?>" <?php if ($active_menu=="faq") { echo "class='active'"; }?>>FAQ</a></li>
+                                        <!--<li><a href="<?=base_url('faq');?>" <?php if ($active_menu=="faq") { echo "class='active'"; }?>>FAQ</a></li>-->
                                         <li><a href="<?=base_url('contact');?>" <?php if ($active_menu=="contact") { echo "class='active'"; }?>>Contact Us</a></li>
 
                                     </ul><!-- /.nav -->
