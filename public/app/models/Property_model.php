@@ -66,7 +66,7 @@ class Property_model extends CI_Model {
         } 
         
         // actual select
-        $this->db->select("*");
+        $this->db->select("properties.*,location_name, type_name");
         $this->db->from("properties");
             $this->db->join('locations', 'properties.location_id=locations.location_id', 'left');
             $this->db->join('types', 'properties.type_id=types.type_id', 'left');    

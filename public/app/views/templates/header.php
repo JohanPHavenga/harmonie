@@ -7,7 +7,7 @@ if (isset($title)) {
 if (isset($meta_description)) {
     $descrip = $meta_description;
 } else {
-    $descrip = "We offer personalized service in booking and managing properties";
+    $descrip = "Holiday accommodation in Hermanus offering self catering apartments, self catering holiday homes in Hermanus by Harmonie Property Rentals.";
 }
 ?>
 <!DOCTYPE html>
@@ -58,6 +58,17 @@ if (isset($meta_description)) {
             endforeach;
         endif;
         ?>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85900175-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-85900175-3');
+        </script>
+
     </head>
     <body>
         

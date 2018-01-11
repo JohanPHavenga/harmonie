@@ -4,6 +4,7 @@
 
 <div class="content">
     <?php
+    if ($latest_properties) {
         foreach ($latest_properties as $property_id=>$property) 
         {
             ?>
@@ -25,6 +26,7 @@
             </div><!-- /.property -->
             <?php
         }
+    }
     ?>
 </div><!-- /.content -->
 

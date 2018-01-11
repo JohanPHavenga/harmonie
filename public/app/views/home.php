@@ -1,24 +1,25 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <?php
+            foreach ($home_img_num as $key=>$num) {
+                if ($num === reset($home_img_num)) { $active="active"; } else { $active=""; }
+                echo "<li data-target='#myCarousel' data-slide-to='".$key."' class='".$active."'></li>";
+            }
+        ?>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="<?=base_url('assets/img/home/home-1.jpg');?>">
-        </div>
-
-        <div class="item">
-            <img src="<?=base_url('assets/img/home/home-2.jpg');?>">
-        </div>
-        
-        <div class="item">
-            <img src="<?=base_url('assets/img/home/home-3.jpg');?>">
-        </div>
+        <?php
+            foreach ($home_img_num as $num) {
+                if ($num === reset($home_img_num)) { $active="active"; } else { $active=""; }
+                echo "<div class='item $active'>";
+                $url="assets/img/home/home-$num.jpg";
+                echo '<img src="'.base_url($url).'">';
+                echo '</div>';
+            }
+        ?>
     </div>
 </div>
 

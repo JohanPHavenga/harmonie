@@ -16,7 +16,7 @@
                     // create table
                     $this->table->set_template(ftable('properties_table'));
                     $this->table->set_heading(
-                            ["ID","Property Code","Status","Rate High","Rate Low","Sleeps","Bath","Beds","Property Type","Location","Actions"]
+                            ["ID","Property Code","Status","Rate High","Rate Low","Sleeps","Bath","Beds","Property Type","Location","Created","Actions"]
                             );
                     foreach ($property_data as $id=>$data_entry) {
                         
@@ -48,7 +48,7 @@
                         
                         $this->table->add_row(
                                     $data_entry['property_id'],
-                                    "<a href='$edit_uri'>".$data_entry['property_code_search']."</a>", 
+                                    "<a href='$edit_uri' title='".strip_tags($data_entry['property_address'])."'>".$data_entry['property_code_search']."</a>", 
                                     flableStatus($data_entry['property_ispublished']),
                                     fdisplayCurrency($data_entry['property_rate_high']), 
                                     fdisplayCurrency($data_entry['property_rate_low']), 
@@ -57,7 +57,8 @@
                                     $data_entry['property_bedrooms'], 
                                     $data_entry['type_name'], 
                                     $data_entry['location_name'], 
-                                    fbuttonActionGroup($action_array)                                    
+                                    date("Y-m-d", strtotime($data_entry['created_date'])), 
+                                    fbuttonActionGroup($action_array)                                   
                                 );
 //                        $this->table->add_row($row);
                         unset($row);

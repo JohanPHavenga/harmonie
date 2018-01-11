@@ -37,6 +37,10 @@ class Home extends Frontend_Controller {
             
             $this->data_to_footer['scripts_to_load']=array("assets/scripts/home.js",);
             
+            $numbers = range(1, 5);
+            shuffle($numbers);
+            $this->data_to_view['home_img_num']=$numbers;
+            
             $this->load->view($this->header_url, $this->data_to_header);
             $this->load->view('home', $this->data_to_view);
             $this->load->view($this->footer_url, $this->data_to_footer);
