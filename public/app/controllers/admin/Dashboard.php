@@ -88,7 +88,7 @@ class Dashboard extends Admin_Controller {
 //        }
 
         $this->load->view($this->header_url, $this->data_to_header);
-        $this->load->view("/admin/dashboard/view", $this->data_to_view);
+        $this->load->view("admin/dashboard/view", $this->data_to_view);
         $this->load->view($this->footer_url, $this->data_to_footer);
     }
 

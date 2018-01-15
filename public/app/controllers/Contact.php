@@ -47,6 +47,9 @@ class Contact extends Frontend_Controller {
 
         $this->data_to_header['title'] = "Mailer"; 
         $this->data_to_view['from']=$from;
+        
+        $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>5]);    
+        $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
 
         // set validation rules
         $this->form_validation->set_rules('inputContactName', 'Name', 'required');
