@@ -118,13 +118,19 @@
 
                     echo "<div class='row'>";    
                         //  Sleeps
-                        echo "<div class='span3 control-group'>";
+                        echo "<div class='span2 control-group'>";
                         echo form_label('Number of guests  <span class="form-required" title="This field is required.">*</span>', 'inputSleeps');
                         echo form_dropdown('inputSleeps', $sleeps_dropdown, @$post['inputSleeps'], ["id" => "inputSleeps","style"=>"width: 100%","required"=>""]);
                         echo "</div>";
+                        
+                        //  Bedrooms
+                        echo "<div class='span2 control-group'>";
+                        echo form_label('Bedrooms  <span class="form-required" title="This field is required.">*</span>', 'inputBeds');
+                        echo form_dropdown('inputBeds', $beds_dropdown, @$post['inputBeds'], ["id" => "inputBeds","style"=>"width: 100%","required"=>""]);
+                        echo "</div>";
 
                         //  Dates
-                        echo "<div class='span3 control-group'>";                    
+                        echo "<div class='span2 control-group'>";                    
                         echo form_label('Date From <span class="form-required" title="This field is required.">*</span>', 'inputDateFrom');
                         echo form_input([
                             'name'          => 'inputDateFrom',
@@ -136,7 +142,7 @@
                         ]);                    
                         echo "</div>";
 
-                        echo "<div class='span3 control-group'>";   
+                        echo "<div class='span2 control-group'>";   
                         echo form_label('Date To <span class="form-required" title="This field is required.">*</span>', 'inputDateTo');
                         echo form_input([
                             'name'          => 'inputDateTo',

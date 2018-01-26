@@ -27,6 +27,7 @@ class Contact extends Frontend_Controller {
         $this->data_to_view['latest_prop'] = $this->load->view('templates/latest_prop', $lp_data, TRUE);
 
         $this->data_to_view["sleeps_dropdown"] = $this->property_model->get_sleeps_dropdown(); 
+        $this->data_to_view["beds_dropdown"] = $this->property_model->get_beds_dropdown(); 
 
         $this->data_to_header['css_to_load']=array("assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css",);
         $this->data_to_footer['js_to_load']=array("assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",);
@@ -67,6 +68,7 @@ class Contact extends Frontend_Controller {
                 $this->data_to_view['email_send']=false;
 
                 $this->data_to_view["sleeps_dropdown"] = $this->property_model->get_sleeps_dropdown(); 
+                $this->data_to_view["beds_dropdown"] = $this->property_model->get_beds_dropdown(); 
                 $this->data_to_header['css_to_load']=array("assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css",);
                 $this->data_to_footer['js_to_load']=array("assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",);
                 $this->data_to_footer['scripts_to_load']=array("assets/scripts/contact.js",);
@@ -115,7 +117,12 @@ class Contact extends Frontend_Controller {
                 $msg_arr[]="Property equiring about: ".$this->input->post('inputPropCode');
             }
             if ($this->input->post('inputSleeps') > 0) {
-                $msg_arr[]="Number of Guests: ".$this->input->post('inputSleeps');
+                if ($this->input->post('inputSleeps')==12) { $num_guests="12+"; } else { $num_guests=$this->input->post('inputSleeps'); }
+                $msg_arr[]="Number of Guests: ".$num_guests;
+            }
+            if ($this->input->post('inputBeds') > 0) {
+                if ($this->input->post('inputBeds')==5) { $num_beds="5+"; } else { $num_beds=$this->input->post('inputBeds'); }
+                $msg_arr[]="Bedrooms: ".$num_beds;
             }
             $msg_arr[]="Date From: ".$this->input->post('inputDateFrom');
             $msg_arr[]="Date To: ".$this->input->post('inputDateTo');
