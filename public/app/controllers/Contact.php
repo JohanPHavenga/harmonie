@@ -77,6 +77,9 @@ class Contact extends Frontend_Controller {
         }
         else
         {
+//            wts($_POST);
+//            die();
+            
             $this->load->library('email');
             
 //            $config['mailtype'] = 'html';
@@ -111,7 +114,7 @@ class Contact extends Frontend_Controller {
             if ($this->input->post('inputPropCode')) {
                 $msg_arr[]="Property equiring about: ".$this->input->post('inputPropCode');
             }
-            if ($this->input->post('inputPropCode') > 0) {
+            if ($this->input->post('inputSleeps') > 0) {
                 $msg_arr[]="Number of Guests: ".$this->input->post('inputSleeps');
             }
             $msg_arr[]="Date From: ".$this->input->post('inputDateFrom');
