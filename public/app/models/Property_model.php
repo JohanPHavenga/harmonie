@@ -133,7 +133,8 @@ class Property_model extends CI_Model {
         $this->db->select("*");
         $this->db->from("properties");
             $this->db->join('locations', 'properties.location_id=locations.location_id', 'left');
-            $this->db->join('types', 'types.type_id=types.type_id', 'left');                   
+            $this->db->join('types', 'types.type_id=types.type_id', 'left');   
+            $this->db->where('property_ispublished', 1);                
         
         $query = $this->db->get();
         

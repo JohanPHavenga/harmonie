@@ -182,6 +182,9 @@
                 
                 }
                 ?>
+                <p>
+                    <strong>Booking policy:</strong> Minimum stay of 14 nights during high season. Minimum of 4 nights stay during low and mid season. 
+                </p>
             </div>
 
             <div class="sidebar span3">
