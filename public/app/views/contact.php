@@ -30,7 +30,7 @@
                 <iframe class="map" width="425" height="350" src="https://maps.google.com/maps?q=-34.418073,19.235384&amp;num=1&amp;ie=UTF8&amp;ll=-34.418073,19.235384&amp;spn=0.041038,0.077162&amp;t=m&amp;z=14&amp;output=embed"></iframe>
 
                 <p>
-                    Please use on of the channels below to contact us. If you are unable to reach us on the phone, please leave us a message 
+                    Please use one of the channels below to contact us. If you are unable to reach us on the phone, please leave us a message 
                     and we will get back to you as soon as possible.
                 </p>
 
