@@ -28,8 +28,15 @@ class Home extends Frontend_Controller {
 	{
             
             $this->data_to_header['active_menu']="home";
+            // get properties, then shuffle them
+            $featured_props = $this->property_model->get_property_list(["is_featured"=>TRUE]);
+            $keys = array_keys($featured_props);
+            shuffle($keys);
+            foreach ($keys as $key)
+            {
+                $this->data_to_view["featured_properties"][$key] = $featured_props[$key];
+            }
             
-            $this->data_to_view["featured_properties"] = $this->property_model->get_property_list(["is_featured"=>TRUE]);
             $this->data_to_view["all_properties"] = $this->property_model->get_property_list(["all_prop"=>TRUE]);  
             
             $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>4]);            
