@@ -143,7 +143,13 @@ class Property_model extends CI_Model {
             foreach ($query->result_array() as $row) {
                 $data[$row['property_id']] = $row;
             }
-            return $data;
+            $keys = array_keys($data);
+            shuffle($keys);
+            foreach ($keys as $key)
+            {
+                $shuffled_data[$key] = $data[$key];
+            }
+            return $shuffled_data;
         }
         return false;
     }
