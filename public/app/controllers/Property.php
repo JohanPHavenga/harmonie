@@ -99,7 +99,6 @@ class Property extends Frontend_Controller {
     {            
         $this->load->helper('file');        
         
-        $this->data_to_header['title']="Detail";
         $this->data_to_header['active_menu']="property";        
         
         $lp_data['latest_properties']=$this->property_model->get_property_list(["latest"=>2]);            
@@ -171,6 +170,8 @@ class Property extends Frontend_Controller {
                 PageContact.init();
             });";        
         }
+        
+        $this->data_to_header['title']=$this->data_to_view["property_data"]['location_name']." | ".$prop_code;
         
         $this->load->view($this->header_url, $this->data_to_header);
         $this->load->view('detail', $this->data_to_view);
