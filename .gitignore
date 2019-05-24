@@ -22,3 +22,4 @@ application/logs/*
 master_photos
 *.log
 *.csv
+/nbproject/private/

@@ -9,7 +9,7 @@
     <div class="page-footer">
         <div class="page-footer-inner">
              <?= date("Y");?> &copy; Administration backend for 
-            <a target="_blank" href="http://www.harmonieprop.co.za">Harmonie Property Rentals</a>
+            <a target="_blank" href="http://www.harmonieprop.co.za">Harmonie Property Rentals</a> | <?= phpversion(); ?>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>
             </div>
