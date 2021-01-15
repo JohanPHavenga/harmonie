@@ -31,7 +31,7 @@ class Contact extends Frontend_Controller {
 
         $this->data_to_header['css_to_load']=array("assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css",);
         $this->data_to_footer['js_to_load']=array("assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",);
-        $this->data_to_footer['scripts_to_load']=array("assets/scripts/contact.js",);
+        $this->data_to_footer['scripts_to_load']=array("assets/scripts/contact.js","https://www.google.com/recaptcha/api.js");
 
         $this->data_to_view['from']=$from;
         
@@ -60,6 +60,7 @@ class Contact extends Frontend_Controller {
         $this->form_validation->set_rules('inputDateFrom', 'Date From', 'required');
         $this->form_validation->set_rules('inputDateTo', 'Date To', 'required');
         $this->form_validation->set_rules('inputContactMessage', 'Message', 'required');
+        $this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'callback_recaptcha', ["callback_recaptcha"=>"Please complete the 'I am not a Robot' check"]);
 
         // load correct view. If validation is false:
         if ($this->form_validation->run() === FALSE)
@@ -71,7 +72,7 @@ class Contact extends Frontend_Controller {
                 $this->data_to_view["beds_dropdown"] = $this->property_model->get_beds_dropdown(); 
                 $this->data_to_header['css_to_load']=array("assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css",);
                 $this->data_to_footer['js_to_load']=array("assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",);
-                $this->data_to_footer['scripts_to_load']=array("assets/scripts/contact.js",);
+                $this->data_to_footer['scripts_to_load']=array("assets/scripts/contact.js","https://www.google.com/recaptcha/api.js");
         
                 $this->load->view($this->header_url, $this->data_to_header);
                 $this->load->view('contact', $this->data_to_view);
