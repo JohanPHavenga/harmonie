@@ -237,8 +237,9 @@
             <div class="portlet-footer">
                 <?php
                     echo "<div class='btn-group'>";
-                    echo fbutton("Submit","submit","primary");
-                    echo fbuttonLink($return_url,"Cancel");
+                    echo fbutton($text="Save",$type="submit",$status="primary",NULL,"save_only");
+                    echo fbutton($text="Save & Close",$type="submit",$status="success");
+                    echo fbuttonLink($return_url,"Cancel",$status="danger");
                     echo "</div>";  
                 ?>
             </div>

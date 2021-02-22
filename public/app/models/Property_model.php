@@ -250,7 +250,12 @@ class Property_model extends CI_Model {
                 $this->db->update('properties', $property_data, array('property_id' => $id));
 
                 $this->db->trans_complete();
-                return $this->db->trans_status();
+                if (!$this->db->trans_status()) {
+                    return $this->db->trans_status();
+                } else {
+                    return $id;
+                }
+
 
             default:
                 show_404();

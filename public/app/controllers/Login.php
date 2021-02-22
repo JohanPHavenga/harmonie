@@ -35,7 +35,7 @@ class Login extends Frontend_Controller {
         $this->data_to_header['title'] = "Admin Login";
         $this->data_to_view['form_url'] = '/login/admin/submit';
         $this->data_to_view['error_url'] = '/login/admin';
-        $this->data_to_view['success_url'] = '/admin';
+        $this->data_to_view['success_url'] = '/admin/property';
 
         // set validation rules
         $this->form_validation->set_rules('user_username', 'Username', 'required');
